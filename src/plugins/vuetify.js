@@ -1,10 +1,12 @@
 import Vue from 'vue'
 import Vuetify from 'vuetify/lib'
-import 'vuetify/src/stylus/app.styl'
+import './main.styl'
 
 Vue.use(Vuetify, {
-  options: {
-    customProperties: true
+  theme: {
+    primary: '#ffaa00',
+    secondary: '#CFD8DC'
   },
+  customProperties: true,
   iconfont: 'md',
 })
