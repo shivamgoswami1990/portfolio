@@ -61,17 +61,18 @@
         <div class="section-2 pa-5" id="section-2">
           <v-img :src="abstract1" class="bg-image" width="613px"></v-img>
 
+          <v-img :src="abstract2" aspect-ratio="1" class="abstract-bg" height="711px" width="778px"></v-img>
+
           <v-layout class="content-layout pt-5">
             <v-flex xs12 md7>
               <h2 class="display-2 font-weight-bold primary--text mb-4">Who I am.</h2>
 
               <v-layout fill-height :column="$vuetify.breakpoint.smAndDown" class="pa-5">
                 <v-flex xs12 md6 class="text-xs-justify">
-                  An enthusiastic, ambitious, self-taught Software Developer with professional experience of
-                  more than an year. A tech geek with a passion to learn and be up to date with the latest in tech world.
-                  Worked previously in a developer role managing existing code base, interfacing with clients,
-                  documentation, cloud deployment, database migration, following Scrum, developing web-apps, testing etc.
-                  Experienced in Full Stack Development from schema design to cloud deployment (mainly AWS).
+                  An enthusiastic, ambitious, self-taught Software Developer with over three years of industry
+                  experience. I have worked with various companies over this period managing and working on multiple
+                  projects. I've always been a part of agile team structure and have worked with languages such as
+                  Ruby, Python, AngularJS, VueJS, Wordpress etc.
                 </v-flex>
                 <v-flex xs12 md5 offset-md1 :class="$vuetify.breakpoint.smAndDown ? 'mt-5' : ''">
                   <div>
@@ -172,13 +173,16 @@
               I have been working with VueJS, Ruby on Rails & Python for over 3 years...
             </p>
             <div class="text-xs-center">
-              <v-btn color="primary" light depressed class="black--text font-weight-bold">Download CV</v-btn>
+              <v-btn color="primary" light depressed class="black--text font-weight-bold" :href="resume"
+                     download="Resume.jpg">
+                Download CV
+              </v-btn>
             </div>
           </blockquote>
 
           <v-img :src="abstract2" aspect-ratio="1" class="abstract-bg" height="711px" width="778px"></v-img>
 
-          <v-layout fill-height row class="content-layout">
+          <v-layout fill-height :column="$vuetify.breakpoint.xsOnly" class="content-layout">
             <v-flex xs12 sm12 md4 :class="$vuetify.breakpoint.smAndDown ? '' : 'pl-5 ml-3'">
 
               <h3 class="headline font-weight-bold mb-5 pb-5 primary--text">My Education</h3>
@@ -247,7 +251,7 @@
                               <v-icon color="primary" size="22">event_note</v-icon>
                             </v-list-tile-action>
 
-                            <v-list-tile-content>
+                            <v-list-tile-content class="hidden-sm-and-down">
                               <v-list-tile-title v-text="'Date'"></v-list-tile-title>
                             </v-list-tile-content>
 
@@ -261,7 +265,7 @@
                               <v-icon color="primary" size="22">supervised_user_circle</v-icon>
                             </v-list-tile-action>
 
-                            <v-list-tile-content>
+                            <v-list-tile-content class="hidden-sm-and-down">
                               <v-list-tile-title v-text="'Team'"></v-list-tile-title>
                             </v-list-tile-content>
 
@@ -275,7 +279,7 @@
                               <v-icon color="primary" size="22">keyboard</v-icon>
                             </v-list-tile-action>
 
-                            <v-list-tile-content>
+                            <v-list-tile-content class="hidden-sm-and-down">
                               <v-list-tile-title v-text="'Languages'"></v-list-tile-title>
                             </v-list-tile-content>
 
@@ -289,7 +293,7 @@
                               <v-icon color="primary" size="22">link</v-icon>
                             </v-list-tile-action>
 
-                            <v-list-tile-content>
+                            <v-list-tile-content class="hidden-sm-and-down">
                               <v-list-tile-title v-text="'URL'"></v-list-tile-title>
                             </v-list-tile-content>
 
@@ -311,7 +315,7 @@
 
             <v-card-actions class="justify-space-around">
               <v-item-group v-model="projectDescriptionWindowCount" class="text-xs-center" mandatory>
-                <v-item v-for="(item, i) in projectDescriptions" :key="i">
+                <v-item v-for="(item, i) in projectDescriptions" :key="i" class="ma-2">
                   <v-btn slot-scope="{ active, toggle }" :input-value="active" @click="toggle" flat outline dark
                          depressed round small>{{item.year}}</v-btn>
                 </v-item>
@@ -372,7 +376,7 @@
                 </div>
               </a>
 
-              <v-list two-line class="contact-details-list mt-5 transparent">
+              <v-list two-line class="contact-details-list mt-5 transparent hidden-sm-and-down">
                 <v-list-tile avatar class="py-4">
                   <v-list-tile-avatar>
                     <v-icon color="primary" size="35">location_on</v-icon>
@@ -466,6 +470,14 @@
       left: -40px;
       z-index: 1;
     }
+
+    .abstract-bg {
+      position absolute;
+      top: 240px;
+      right: -250px;
+      z-index: 1;
+    }
+
     .content-layout {
       position relative
       z-index 5;
@@ -586,11 +598,13 @@ import makersLane from './assets/makerslane.png'
 import amc from './assets/amc.png'
 import hitiq from './assets/hitiq.png'
 import cordelta from './assets/cordelta.png'
+import resume from './assets/Resume.jpg'
 
 export default {
   data () {
     return {
       heroImage: heroImage,
+      resume: resume,
       abstract1: abstract1,
       abstract2: abstract2,
       abstract3: abstract3,
