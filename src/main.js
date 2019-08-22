@@ -21,6 +21,7 @@ import makersLane from './assets/makerslane.png'
 import amc from './assets/amc.png'
 import hitiq from './assets/hitiq.jpg'
 import cordelta from './assets/cordelta.png'
+import actew from './assets/actew.png'
 import resume from './assets/Resume.jpg'
 import anu from './assets/anu.png'
 import phone from './assets/phone.svg'
@@ -44,6 +45,7 @@ Vue.prototype.makersLane = makersLane
 Vue.prototype.amc = amc
 Vue.prototype.hitiq = hitiq
 Vue.prototype.cordelta = cordelta
+Vue.prototype.actew = actew
 Vue.prototype.resume = resume
 Vue.prototype.anu = anu
 Vue.prototype.phone = phone
@@ -72,7 +74,13 @@ Vue.prototype.skillsInfo = [
 ]
 
 Vue.prototype.timelineInfo = [
-  { 'date' : 'Present', 'contentHeading': 'Cordelta Pty Ltd', 'contentSubheading': 'Front-end Developer' ,
+  { 'date' : 'July 2019 - Present', 'contentHeading': 'ActewAGL Pty Ltd', 'contentSubheading': 'Front-end Developer' ,
+    'contentURL': 'actewagl.com.au', 'contentLink': 'http://www.actewagl.com.au',
+    'contentTagline': 'Energy services provider in ACT',
+    'contentBody': 'Developing in house products using technologies' +
+      ' such as HTML, CSS3, SASS, Bootstrap, Material Design, VueJS in an agile environment', 'image': actew
+  },
+  { 'date' : 'August 2018 - June 2019', 'contentHeading': 'Cordelta Pty Ltd', 'contentSubheading': 'Front-end Developer' ,
     'contentURL': 'cordelta.com', 'contentLink': 'http://www.cordelta.com',
     'contentTagline': 'A professional services firm in ACT',
     'contentBody': 'Working within the ICT business unit on multiple ACT government projects using technologies' +
