@@ -1,12 +1,26 @@
 import Vue from 'vue'
 import Vuetify from 'vuetify/lib'
-import './main.styl'
+import VueMeta from 'vue-meta'
 
-Vue.use(Vuetify, {
+Vue.use(Vuetify)
+Vue.use(VueMeta)
+
+export default new Vuetify({
   theme: {
-    primary: '#ffaa00',
-    secondary: '#CFD8DC'
+    dark: true,
+    themes: {
+      dark: {
+        primary: '#ffaa00',
+        secondary: '#CFD8DC',
+        accent: '#82B1FF',
+        error: '#FF5252',
+        info: '#2196F3',
+        success: '#4CAF50',
+      },
+    },
   },
-  customProperties: true,
-  iconfont: 'md',
+  icons: {
+    iconfont: 'mdi'
+  }
 })
+

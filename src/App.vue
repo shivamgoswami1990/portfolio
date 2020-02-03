@@ -1,35 +1,33 @@
 <template>
-  <router-view></router-view>
+  <div id="app">
+    <v-app>
+      <v-content>
+        <h1>This is my portfolio</h1>
+      </v-content>
+    </v-app>
+  </div>
 </template>
 
-<style lang="stylus">
-  * {
-    box-sizing: border-box;
-  }
-
-  :root, html, body {
-    font-size: 16px;
-    font-size: calc(16px + 0.02vw);
-    overflow-x: hidden
-  }
-
-  .float-left {
-    float: left;
-  }
-
-  .float-right {
-    float: right;
-  }
-
-  .full-width {
-    width: 100%;
-  }
-
-  .max-width-500px {
-    max-width: 500px;
-  }
-
-  .max-width-300px {
-    max-width: 500px;
+<style lang="scss">
+  #app {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 </style>
+
+<script>
+export default {
+  metaInfo: {
+    title: 'Shivam Goswami',
+    titleTemplate: 'Frontend Developer Canberra → VueJS → AngularJS → Ruby on Rails → Python → %s',
+    meta: [
+      { name: 'name', content: 'Freelance frontend development in Canberra, Australia' },
+      { name: 'description', content: 'Specializing in languages such as VueJS, AngularJS, EmberJS, Ruby, Python' }
+    ]
+  },
+  data() {
+    return {
+    }
+  }
+}
+</script>
