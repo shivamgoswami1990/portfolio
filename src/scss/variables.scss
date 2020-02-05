@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 @import '~vuetify/src/styles/styles.sass';
 
-$new-colors: (
-        'background': map-get($shades, 'black')
+$material-dark: (
+        'app-bar': transparent,
+        'bottom-navigation': #424242,
+        'background': #000000,
+        'cards': #000000,
+        'navigation-drawer': #000000,
+        'toolbar': #000000
 );
-$material-dark: map-merge($material-dark, $new-colors);
 
 $font-size-root: 16px;
-$body-font-family: 'Raleway', sans-serif !default;
+$body-font-family: 'Raleway', sans-serif;
 $card-border-radius: 0;
 $chip-label-border-radius: 0;
 

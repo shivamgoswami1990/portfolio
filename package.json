@@ -11,7 +11,7 @@
     "core-js": "^3.6.4",
     "vue": "^2.6.11",
     "vue-meta": "^2.3.2",
-    "vuetify": "^2.2.8"
+    "vuetify": "^2.2.9"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.1.2",
@@ -61,12 +61,7 @@
         "propList": [
           "*"
         ],
-        "selectorBlackList": [
-          ":root",
-          "html",
-          "body"
-        ],
-        "replace": false
+        "replace": true
       }
     }
   },
