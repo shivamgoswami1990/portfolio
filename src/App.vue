@@ -3,7 +3,7 @@
     <v-app>
       <!-- Top application bar -->
       <v-app-bar app class="pt-3" elevation="0">
-        <v-container class="d-flex pa-0">
+        <v-container class="d-flex">
 
           <v-app-bar-nav-icon class="ml-4">
             <slot>
@@ -42,8 +42,40 @@
 
       <!-- Content -->
       <v-content class="pt-0">
+
+        <!-- Hero section with image as a background -->
         <v-img lazy-src="https://dummyimage.com/1280x720/303030/000000.png&text=+"
-               :height="innerScreenHeight" :width="innerScreenWidth"/>
+               :height="innerScreenHeight" :width="innerScreenWidth">
+          <v-container :style="{ height: innerScreenHeight + 'px'}">
+          <v-layout wrap fill-height class="hero-section">
+
+            <!-- Background layer -->
+            <div class="background-layer">
+              <v-layout fill-height wrap align-center justify-end column>
+                <div>
+                  <Cube/>
+                  <p class="text-accent display-1">Full Stack</p>
+                  <p class="text-accent">Developer</p>
+                </div>
+              </v-layout>
+            </div>
+            <!-- Background layer -->
+
+            <!-- Foreground layer -->
+            <div class="foreground-layer">
+              <v-layout fill-height wrap justify-start align-center>
+                <h1 class="display-3 ml-10">
+                  Hello, I'm shivam Goswami
+                </h1>
+              </v-layout>
+            </div>
+            <!-- Foreground layer -->
+
+          </v-layout>
+          </v-container>
+        </v-img>
+        <!-- Hero section with image as a background -->
+
       </v-content>
       <!-- Content -->
     </v-app>
@@ -55,6 +87,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
+    .text-accent {
+      color: #191919;
+    }
+
     .avatar-border {
       border: 1px solid #F7A300;
       color: #F7A300;
@@ -64,11 +100,60 @@
       position: absolute;
       left: -24px;
     }
+
+    .hero-section {
+      position: relative;
+      .background-layer {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 1px solid yellow;
+        z-index: 5;
+
+        .cube-wrapper {
+          position: absolute;
+          bottom: -60px;
+          left: 20%;
+          transform: translateX(-50%);
+        }
+
+        p {
+
+          &:first-child {
+            margin-bottom: 0;
+          }
+
+          &:last-child {
+            font-size: 120px;
+            line-height: 100px;
+            margin-bottom: 30px;
+          }
+          text-align: right;
+          width: 100%;
+        }
+      }
+
+      .foreground-layer {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 1px solid blue;
+        z-index: 10;
+
+        h1 {
+          width: 40%;
+        }
+      }
+    }
   }
 </style>
 
 <script>
+import Cube from './components/Cube'
 export default {
+  components: {
+    Cube
+  },
   metaInfo: {
     title: 'Shivam Goswami',
     titleTemplate: 'Frontend Developer Canberra → VueJS → AngularJS → Ruby on Rails → Python → %s',
