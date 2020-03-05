@@ -1,7 +1,13 @@
 module.exports = {
-  "transpileDependencies": [
+  transpileDependencies: [
     "vuetify"
   ],
+
+  productionSourceMap: false,
+
+  devServer: {
+    compress: true
+  }
 
   // pluginOptions: {
   //   prerenderSpa: {
