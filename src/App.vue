@@ -42,70 +42,65 @@
 
             <!-- Content -->
             <v-content class="pt-0 content">
-                <svg class="svg-container" :width="innerScreenWidth" :height="innerScreenHeight" preserveAspectRatio="none">
-                    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" style="stop-color:#303030;stop-opacity:1" />
-                        <stop offset="40%" style="stop-color:#535353;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#080808;stop-opacity:0.6" />
-                    </linearGradient>
-                    <path stroke-width="3" id="line" fill="url(#gradient)"
-                          :d="'M ' + innerScreenWidth + ' 0' +
-                          ' V 0'+ ' ' + innerScreenHeight + ', ' +
-                          ' H 0 0, ' +
-                           ' C ' + getPercentOf(30, innerScreenWidth) + ' ' + getPercentOf(90, innerScreenHeight) + ', '
-                            + getPercentOf(20, innerScreenWidth) + ' ' + getPercentOf(60, innerScreenHeight) + ', ' +
-                            getPercentOf(45, innerScreenWidth) + ' ' + getPercentOf(55, innerScreenHeight) +
-                           ' C ' + getPercentOf(45, innerScreenWidth) + ' ' + getPercentOf(85, innerScreenHeight) + ', '
-                            + getPercentOf(40, innerScreenWidth) + ' ' + getPercentOf(40, innerScreenHeight) + ', ' +
-                            getPercentOf(55, innerScreenWidth) + ' ' + getPercentOf(35, innerScreenHeight) +
-                           ' C ' + getPercentOf(75, innerScreenWidth) + ' ' + getPercentOf(30, innerScreenHeight) + ', '
-                            + getPercentOf(70, innerScreenWidth) + ' ' + getPercentOf(10, innerScreenHeight) + ', ' +
-                            getPercentOf(100, innerScreenWidth) + ' ' + getPercentOf(0, innerScreenHeight)"/>
-                </svg>
+                <svg-background :inner-screen-width="innerScreenWidth" :inner-screen-height="innerScreenHeight"/>
                 <!-- Hero section with image as a background -->
                     <v-container :style="{ height: innerScreenHeight + 'px'}">
                         <v-layout wrap fill-height class="hero-section">
+                            <div class="svg-v-line-container">
+                                <svg class="v-line" preserveAspectRatio="none">
+                                    <line :stroke="$vuetify.theme.defaults.dark.primary" stroke-width="2"
+                                          fill="none" x1="0" y1="0" x2="0" y2="100%"/>
+                                </svg>
 
-                            <!-- Background layer -->
-                            <div class="background-layer">
-                                <v-layout fill-height wrap align-center justify-end column>
-                                    <div>
-                                        <Cube/>
-                                        <p class="text-accent display-1">Front-end</p>
-                                        <p class="text-accent">Developer</p>
+                                <div class="scroll-downs">
+                                    <div class="mousey">
+                                        <div class="scroller"></div>
                                     </div>
-                                </v-layout>
+                                </div>
                             </div>
-                            <!-- Background layer -->
 
-                            <!-- Foreground layer -->
-                            <div class="foreground-layer">
-                                <v-layout fill-height wrap justify-center align-center class="pl-5">
-                                    <v-responsive>
-                                        <h3 v-html="'< h1 >'" class="mb-5 text-accent opacity font-italic"/>
-                                        <h1 class="display-3 ml-5 font-weight-medium">
-                                            Hi <br>
-                                            I'm Shiv <br>
-                                            Front-end Developer
-                                        </h1>
-                                        <h3 v-html="'< h1 />'" class="mt-5 text-accent opacity font-italic"/>
+                            <v-layout wrap fill-height class="layer-container">
+                                <!-- Background layer -->
+                                <div class="background-layer">
+                                    <v-layout fill-height wrap align-center justify-end column>
+                                        <div>
+                                            <Cube/>
+                                            <p class="text-accent display-1">Front-end</p>
+                                            <p class="text-accent">Developer</p>
+                                        </div>
+                                    </v-layout>
+                                </div>
+                                <!-- Background layer -->
 
-                                        <a class="text-primary font-weight-bold pt-5">View projects</a>
-                                    </v-responsive>
-
-                                    <v-responsive class="menu-container">
+                                <!-- Foreground layer -->
+                                <div class="foreground-layer">
+                                    <v-layout fill-height wrap justify-center align-center class="pl-5 banner-container">
                                         <div class="cube-container"><Cube/></div>
-                                        <ul class="landing-menu">
-                                            <li v-for="(item, index) in landingMenu" :key="index">
-                                                <div class="menu-name caption">{{item.name}}</div>
-                                                <div class="menu-extension"/>
-                                                <div class="menu-order caption">{{item.order}}</div>
-                                            </li>
-                                        </ul>
-                                    </v-responsive>
-                                </v-layout>
-                            </div>
-                            <!-- Foreground layer -->
+                                        <v-responsive>
+                                            <h3 v-html="'< h1 >'" class="mb-5 text-accent opacity font-italic"/>
+                                            <h1 class="display-3 ml-5 font-weight-medium">
+                                                Hi <br>
+                                                I'm Shiv
+                                            </h1>
+                                            <h3 v-html="'< h1 />'" class="mt-5 text-accent opacity font-italic"/>
+
+                                            <a class="text-primary font-weight-bold pt-5">View projects</a>
+                                        </v-responsive>
+
+                                        <v-responsive class="menu-container">
+                                            <div class="cube-container"><Cube/></div>
+                                            <ul class="landing-menu">
+                                                <li v-for="(item, index) in landingMenu" :key="index">
+                                                    <div class="menu-name caption">{{item.name}}</div>
+                                                    <div class="menu-extension"/>
+                                                    <div class="menu-order caption">{{item.order}}</div>
+                                                </li>
+                                            </ul>
+                                        </v-responsive>
+                                    </v-layout>
+                                </div>
+                                <!-- Foreground layer -->
+                            </v-layout>
 
                         </v-layout>
                     </v-container>
@@ -148,110 +143,169 @@
             left: -24px;
         }
 
-        .content {
-            position: relative;
-
-            .svg-container {
-                position: absolute;
-                vector-effect:non-scaling-stroke;
-            }
-        }
-
         .hero-section {
             position: relative;
 
-            .background-layer {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                border: 1px solid yellow;
-                z-index: 5;
+            .svg-v-line-container {
+                width: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
 
-                .cube-wrapper {
+                .scroll-downs {
                     position: absolute;
-                    bottom: -60px;
-                    left: 20%;
-                    transform: translateX(-50%);
+                    bottom: 45px;
+                    left: -5px;
+
+                    width : 40px;
+                    height: 55px;
+                    display: flex;
+                    justify-content: center;
+
+                    .mousey {
+                        width: 3px;
+                        padding: 10px;
+                        height: 25px;
+                        border: 1px solid #F7A300;
+                        border-radius: 25px;
+                        opacity: 0.75;
+                        box-sizing: content-box;
+
+                        .scroller {
+                            width: 3px;
+                            height: 10px;
+                            border-radius: 25%;
+                            background-color: #F7A300;
+                            animation-name: scroll;
+                            animation-duration: 2.2s;
+                            animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+                            animation-iteration-count: infinite;
+
+                            @keyframes scroll {
+                                0% { opacity: 0; }
+                                10% { transform: translateY(0); opacity: 1; }
+                                100% { transform: translateY(15px); opacity: 0;}
+                            }
+                        }
+                    }
                 }
 
-                p {
-
-                    &:first-child {
-                        margin-bottom: 0;
-                    }
-
-                    &:last-child {
-                        font-size: 120px;
-                        line-height: 100px;
-                        margin-bottom: 30px;
-                    }
-
-                    text-align: right;
-                    width: 100%;
-                    opacity: 0.35;
+                .v-line {
+                    width: 2px;
+                    height: 100%;
+                    padding: 100px 0;
                 }
             }
 
-            .foreground-layer {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                border: 1px solid blue;
-                z-index: 10;
+            .layer-container {
+                .background-layer {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    /*border: 1px solid yellow;*/
+                    z-index: 5;
 
-                h1 {
-                    width: 70%;
-                }
-
-                .menu-container {
-                    position: relative;
-                    .cube-container {
+                    .cube-wrapper {
                         position: absolute;
-                        top: -80px;
-                        right: 40px;
+                        bottom: -60px;
+                        left: 21%;
+                        transform: translateX(-50%);
                     }
 
-                    .landing-menu {
-                        list-style: none;
-                        text-align: right;
-                        position: relative;
-                        z-index: 1;
+                    p {
 
-                        li {
-                            display: flex;
-                            align-items: center;
-                            justify-content: flex-end;
-                            padding: 20px 15px;
-                            &:hover {
-                                cursor: pointer;
-                                .menu-extension {
-                                    width: 50px;
-                                    border-bottom-color: white;
+                        &:first-child {
+                            margin-bottom: 0;
+                        }
+
+                        &:last-child {
+                            font-size: 120px;
+                            line-height: 100px;
+                            margin-bottom: 30px;
+                        }
+
+                        text-align: right;
+                        width: 100%;
+                        opacity: 0.35;
+                    }
+                }
+
+                .foreground-layer {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    /*border: 1px solid blue;*/
+                    z-index: 10;
+
+                    h1 {
+                        width: 70%;
+                    }
+
+                    .banner-container {
+                        position: relative;
+
+                        .cube-container {
+                            position: absolute;
+                            top: 80px;
+                            left: 130px;
+                        }
+
+                        .menu-container {
+                            position: relative;
+
+                            .cube-container {
+                                position: absolute;
+                                top: -80px;
+                                right: 40px;
+                            }
+
+                            .landing-menu {
+                                list-style: none;
+                                text-align: right;
+                                position: relative;
+                                z-index: 1;
+
+                                li {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: flex-end;
+                                    padding: 20px 15px;
+
+                                    &:hover {
+                                        cursor: pointer;
+
+                                        .menu-extension {
+                                            width: 50px;
+                                            border-bottom-color: white;
+                                        }
+
+                                        .menu-name, .menu-order {
+                                            color: white;
+                                            visibility: visible;
+                                        }
+                                    }
                                 }
 
-                                .menu-name, .menu-order {
-                                    color: white;
-                                    visibility: visible;
+                                .menu-extension {
+                                    border-bottom: 2px solid #F7A300;
+                                    width: 30px;
+                                    height: 0;
+                                    padding-right: 10px;
+                                }
+
+                                .menu-name {
+                                    padding-right: 20px;
+                                    color: #616161;
+                                    visibility: hidden;
+                                    text-transform: uppercase;
+                                }
+
+                                .menu-order {
+                                    padding-left: 10px;
+                                    color: #F7A300;
                                 }
                             }
-                        }
-                        .menu-extension {
-                            border-bottom: 2px solid #F7A300;
-                            width: 30px;
-                            height: 0;
-                            padding-right: 10px;
-                        }
-
-                        .menu-name {
-                            padding-right: 20px;
-                            color: #616161;
-                            visibility: hidden;
-                            text-transform: uppercase;
-                        }
-
-                        .menu-order {
-                            padding-left: 10px;
-                            color: #F7A300;
                         }
                     }
                 }
@@ -262,10 +316,12 @@
 
 <script>
 import Cube from './components/Cube'
+import SvgBackground from './components/SvgBackground'
 
 export default {
   components: {
-    Cube
+    Cube,
+    SvgBackground
   },
   metaInfo: {
     title: 'Shivam Goswami',
@@ -278,12 +334,6 @@ export default {
   mounted() {
     this.innerScreenHeight = this.$vuetify.breakpoint.height
     this.innerScreenWidth = this.$vuetify.breakpoint.width
-    this.svgElement = document.getElementById("line")
-    // this.svgElementLength = this.svgElement.getTotalLength()
-    // this.svgElement.style.strokeDasharray = this.svgElementLength
-
-    // Hide the triangle by offsetting dash. Remove this line to show the triangle before scroll draw
-    this.svgElement.style.strokeDashoffset = this.svgElementLength
   },
   data() {
     return {
@@ -315,26 +365,7 @@ export default {
           name: 'Contact',
           linkTo: ''
         }
-      ],
-      svgElement: null,
-      svgElementLength: 0
-    }
-  },
-  methods: {
-    getPercentOf(percent, value) {
-      return (parseFloat(percent) * parseFloat(value)) / 100
-    },
-    handleScroll() {
-      let scrollpercent = (document.body.scrollTop + document.documentElement.scrollTop) /
-        (document.documentElement.scrollHeight - document.documentElement.clientHeight)
-
-      let draw = this.svgElement.getTotalLength() * scrollpercent
-
-      // Reverse the drawing (when scrolling upwards)
-      console.log(this.svgElement.style.strokeDashoffset)
-      this.svgElement.style.strokeDashoffset = this.svgElement.getTotalLength() - draw
-
-      //console.log(scrollpercent, this.svgElement, event)
+      ]
     }
   }
 }
