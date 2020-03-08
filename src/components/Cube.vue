@@ -1,5 +1,13 @@
 <template>
     <div class="cube-wrapper">
+        <svg preserveAspectRatio ="none" fill="none" v-if="fillSvg">
+            <path fill="none" stroke-width="2" :stroke="$vuetify.theme.defaults.dark.primary"
+                  d="M 15,20 L 76, 56" />
+            <path fill="none" stroke-width="2" :stroke="$vuetify.theme.defaults.dark.primary"
+                  d="M 142,18 L 76, 56" />
+            <path fill="none" stroke-width="2" :stroke="$vuetify.theme.defaults.dark.primary"
+                  d="M 76,56 L 76, 116" />
+        </svg>
         <div class="square"></div>
         <div class="square2"></div>
         <div class="square3"></div>
@@ -9,11 +17,17 @@
 <style lang="scss">
     .cube-wrapper {
         position: relative;
-        width: 206px;
-        height: 190px;
-        margin: 0px auto;
-        margin-top:100px;
+        width: 160px;
+        height: 150px;
         opacity: 0.5;
+
+        svg {
+            position: absolute;
+            top: 0;
+            width: inherit;
+            height: inherit;
+            z-index: 1;
+        }
 
         .square{
             width:60px;
@@ -46,3 +60,14 @@
         }
     }
 </style>
+
+<script>
+export default {
+  props: {
+    fillSvg: {
+      type: Boolean,
+      default: false
+    }
+  }
+}
+</script>

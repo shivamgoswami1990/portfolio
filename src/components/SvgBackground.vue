@@ -16,7 +16,7 @@
                             + getPercentOf(50, innerScreenWidth) + ' ' + getPercentOf(20, innerScreenHeight) + ', ' +
                             getPercentOf(100, innerScreenWidth) + ' ' + getPercentOf(0, innerScreenHeight)"/>
 
-        <path :stroke="$vuetify.theme.defaults.dark.primary" stroke-width="0.05" fill="none"
+        <path :stroke="$vuetify.theme.defaults.dark.primary" :stroke-width="fillSvg ? 0.4 : 0.05" fill="none"
               :d="'M 0 ' + innerScreenHeight +
                            ' C ' + getPercentOf(30, innerScreenWidth) + ' ' + getPercentOf(90, innerScreenHeight) + ', '
                             + getPercentOf(20, innerScreenWidth) + ' ' + getPercentOf(60, innerScreenHeight) + ', ' +
@@ -44,6 +44,10 @@ export default {
     innerScreenHeight: {
       type: Number,
       default: 0
+    },
+    fillSvg: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {

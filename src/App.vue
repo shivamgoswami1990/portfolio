@@ -42,7 +42,8 @@
 
             <!-- Content -->
             <v-content class="pt-0 content">
-                <svg-background :inner-screen-width="innerScreenWidth" :inner-screen-height="innerScreenHeight"/>
+                <svg-background :inner-screen-width="innerScreenWidth"
+                                :inner-screen-height="innerScreenHeight" :fill-svg="fillSvg"/>
                 <!-- Hero section with image as a background -->
                     <v-container :style="{ height: innerScreenHeight + 'px'}">
                         <v-layout wrap fill-height class="hero-section">
@@ -52,7 +53,7 @@
                                           fill="none" x1="0" y1="0" x2="0" y2="100%"/>
                                 </svg>
 
-                                <div class="scroll-downs">
+                                <div class="scroll-downs" @click="fillSvg = !fillSvg">
                                     <div class="mousey">
                                         <div class="scroller"></div>
                                     </div>
@@ -64,7 +65,7 @@
                                 <div class="background-layer">
                                     <v-layout fill-height wrap align-center justify-end column>
                                         <div>
-                                            <Cube/>
+                                            <Cube :fill-svg="fillSvg"/>
                                             <p class="text-accent display-1">Front-end</p>
                                             <p class="text-accent">Developer</p>
                                         </div>
@@ -75,7 +76,9 @@
                                 <!-- Foreground layer -->
                                 <div class="foreground-layer">
                                     <v-layout fill-height wrap justify-center align-center class="pl-5 banner-container">
-                                        <div class="cube-container"><Cube/></div>
+                                        <div class="cube-container">
+                                            <Cube :fill-svg="fillSvg"/>
+                                        </div>
                                         <v-responsive>
                                             <h3 v-html="'< h1 >'" class="mb-5 text-accent opacity font-italic"/>
                                             <h1 class="display-3 ml-5 font-weight-medium">
@@ -88,7 +91,9 @@
                                         </v-responsive>
 
                                         <v-responsive class="menu-container">
-                                            <div class="cube-container"><Cube/></div>
+                                            <div class="cube-container">
+                                                <Cube :fill-svg="fillSvg"/>
+                                            </div>
                                             <ul class="landing-menu">
                                                 <li v-for="(item, index) in landingMenu" :key="index">
                                                     <div class="menu-name caption">{{item.name}}</div>
@@ -152,10 +157,11 @@
                 align-items: center;
                 justify-content: center;
                 position: relative;
+                padding: 50px 0;
 
                 .scroll-downs {
                     position: absolute;
-                    bottom: 45px;
+                    bottom: 95px;
                     left: -5px;
 
                     width : 40px;
@@ -171,6 +177,7 @@
                         border-radius: 25px;
                         opacity: 0.75;
                         box-sizing: content-box;
+                        cursor: pointer;
 
                         .scroller {
                             width: 3px;
@@ -208,8 +215,8 @@
 
                     .cube-wrapper {
                         position: absolute;
-                        bottom: -60px;
-                        left: 21%;
+                        bottom: -20px;
+                        left: 19%;
                         transform: translateX(-50%);
                     }
 
@@ -247,8 +254,8 @@
 
                         .cube-container {
                             position: absolute;
-                            top: 80px;
-                            left: 130px;
+                            top: 150px;
+                            left: 10%;
                         }
 
                         .menu-container {
@@ -256,8 +263,8 @@
 
                             .cube-container {
                                 position: absolute;
-                                top: -80px;
-                                right: 40px;
+                                top: 50px;
+                                left: 30%;
                             }
 
                             .landing-menu {
@@ -365,7 +372,13 @@ export default {
           name: 'Contact',
           linkTo: ''
         }
-      ]
+      ],
+      fillSvg: false
+    }
+  },
+  methods: {
+    fillSvgCube() {
+      console.log('I was clicked')
     }
   }
 }
