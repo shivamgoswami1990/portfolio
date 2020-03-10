@@ -1,11 +1,11 @@
 <template>
-    <svg class="svg-container" :width="innerScreenWidth" :height="innerScreenHeight" preserveAspectRatio="none">
-        <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+    <svg class="svg-container1" :width="innerScreenWidth" :height="innerScreenHeight" preserveAspectRatio="none">
+        <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" style="stop-color:#303030;stop-opacity:1" />
             <stop offset="40%" style="stop-color:#232323;stop-opacity:1" />
             <stop offset="100%" style="stop-color:#080808;stop-opacity:1" />
         </linearGradient>
-        <path stroke-width="3" fill="url(#gradient)"
+        <path stroke-width="3" fill="url(#gradient1)"
               :d="'M ' + innerScreenWidth + ' 0' +
                           ' V 0'+ ' ' + innerScreenHeight + ', ' +
                           ' H 0 0, ' +
@@ -28,7 +28,7 @@
 </template>
 
 <style lang="scss" scoped>
-    .svg-container {
+    .svg-container1 {
         position: absolute;
         vector-effect:non-scaling-stroke;
     }

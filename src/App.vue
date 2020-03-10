@@ -42,11 +42,11 @@
 
             <!-- Content -->
             <v-content class="pt-0 content">
-                <svg-background :inner-screen-width="innerScreenWidth"
+                <svg-background1 :inner-screen-width="innerScreenWidth"
                                 :inner-screen-height="innerScreenHeight" :fill-svg="fillSvg"/>
                 <!-- Hero section with image as a background -->
                     <v-container :style="{ height: innerScreenHeight + 'px'}">
-                        <v-layout wrap fill-height class="hero-section">
+                        <v-layout wrap fill-height class="hero-section svg-v-line-section">
                             <div class="svg-v-line-container">
                                 <svg class="v-line" preserveAspectRatio="none">
                                     <line :stroke="$vuetify.theme.defaults.dark.primary" stroke-width="2"
@@ -63,11 +63,13 @@
                             <v-layout wrap fill-height class="layer-container">
                                 <!-- Background layer -->
                                 <div class="background-layer">
-                                    <v-layout fill-height wrap align-center justify-end column>
-                                        <div>
-                                            <Cube :fill-svg="fillSvg"/>
-                                            <p class="text-accent display-1">Front-end</p>
-                                            <p class="text-accent">Developer</p>
+                                    <v-layout fill-height wrap align-end justify-center row>
+                                        <div class="title-container">
+                                            <Cube :fill-svg="fillSvg" v-if="$vuetify.breakpoint.lgAndUp"/>
+                                            <div class="title-wrapper" v-if="$vuetify.breakpoint.smAndUp">
+                                                <p class="text-accent display-1">Front-end</p>
+                                                <p class="text-accent">Developer</p>
+                                            </div>
                                         </div>
                                     </v-layout>
                                 </div>
@@ -90,9 +92,9 @@
                                             <a class="text-primary font-weight-bold pt-5">View projects</a>
                                         </v-responsive>
 
-                                        <v-responsive class="menu-container">
+                                        <v-responsive class="menu-container" v-if="$vuetify.breakpoint.smAndUp">
                                             <div class="cube-container">
-                                                <Cube :fill-svg="fillSvg"/>
+                                                <Cube :fill-svg="fillSvg" v-if="$vuetify.breakpoint.mdAndUp"/>
                                             </div>
                                             <ul class="landing-menu">
                                                 <li v-for="(item, index) in landingMenu" :key="index">
@@ -110,6 +112,70 @@
                         </v-layout>
                     </v-container>
                 <!-- Hero section with image as a background -->
+
+                <svg-background2 :inner-screen-width="innerScreenWidth"
+                                :inner-screen-height="innerScreenHeight" :fill-svg="fillSvg"/>
+                <!-- Hero section with image as a background -->
+                <v-container :style="{ height: innerScreenHeight + 'px'}">
+                    <v-layout wrap fill-height justify-center align-center class="about-section">
+
+                        <v-responsive>
+                            <h1 class="display-3 ml-5 font-weight-medium">
+                                About me :
+                            </h1>
+
+                            <v-row class="pa-5" no-gutters>
+                                <v-col cols="12" md="6">
+                                    <v-card color="#1A1A1A" elevation="0" tile class="pa-12" height="335">
+                                        <v-layout justify-space-between wrap>
+                                            <v-responsive>
+                                                <h1 class="display-2 font-weight-medium">10</h1>
+                                                <p class="text-primary text-uppercase subtitle-2">Years of experience</p>
+                                            </v-responsive>
+                                            <v-responsive>
+                                                <h1 class="display-2 font-weight-medium">26</h1>
+                                                <p class="text-primary text-uppercase subtitle-2">Years old</p>
+                                            </v-responsive>
+                                        </v-layout>
+
+                                        <v-card-text class="pa-0">
+                                            <p class="text-justify">
+                                                An enthusiastic, ambitious, self-taught Software Developer
+                                                with over three years of industry experience.
+                                                I have worked with various companies over this period managing
+                                                and working on multiple projects. I've always been a part of agile
+                                                team structure and have worked with languages such as Ruby,
+                                                Python, AngularJS, VueJS, Wordpress etc.
+                                            </p>
+                                        </v-card-text>
+                                    </v-card>
+                                </v-col>
+                                <v-col cols="12" md="6">
+                                    <v-card color="#303030" elevation="0" tile class="pa-12 location-card" height="335">
+                                        <Cube/>
+                                        <v-layout justify-space-between wrap fill-height column class="pl-12">
+                                            <div>
+                                                <p class="text-uppercase subtitle-2 text-accent mb-0">Where I'm located</p>
+                                                <h2 class="text-uppercase">Canberra, Australia</h2>
+                                            </div>
+
+                                            <div>
+                                                <p class="text-uppercase subtitle-2 text-accent mb-0">Email</p>
+                                                <h2>shiv15101990@gmail.com</h2>
+                                            </div>
+
+                                            <div>
+                                                <p class="text-uppercase subtitle-2 text-accent mb-0">Phone</p>
+                                                <h2>+61 416530555</h2>
+                                            </div>
+                                        </v-layout>
+                                    </v-card>
+                                </v-col>
+                            </v-row>
+                        </v-responsive>
+
+                    </v-layout>
+                </v-container>
 
             </v-content>
             <!-- Content -->
@@ -148,9 +214,8 @@
             left: -24px;
         }
 
-        .hero-section {
+        .svg-v-line-section {
             position: relative;
-
             .svg-v-line-container {
                 width: 30px;
                 display: flex;
@@ -204,26 +269,30 @@
                     padding: 100px 0;
                 }
             }
+        }
 
+        .hero-section {
             .layer-container {
                 .background-layer {
                     position: absolute;
                     width: 100%;
                     height: 100%;
-                    /*border: 1px solid yellow;*/
                     z-index: 5;
 
-                    .cube-wrapper {
-                        position: absolute;
-                        bottom: -20px;
-                        left: 19%;
-                        transform: translateX(-50%);
+                    .title-container {
+                        display: flex;
+
+                        .cube-wrapper {
+                            position: relative;
+                            top: 40px;
+                        }
                     }
 
                     p {
 
                         &:first-child {
                             margin-bottom: 0;
+                            padding-bottom: 0;
                         }
 
                         &:last-child {
@@ -272,6 +341,7 @@
                                 text-align: right;
                                 position: relative;
                                 z-index: 1;
+                                padding-right: 10px;
 
                                 li {
                                     display: flex;
@@ -318,17 +388,31 @@
                 }
             }
         }
+
+        .about-section {
+            .location-card {
+                position: relative;
+
+                .cube-wrapper {
+                    position: absolute;
+                    bottom: -55px;
+                    left: -80px;
+                }
+            }
+        }
     }
 </style>
 
 <script>
 import Cube from './components/Cube'
-import SvgBackground from './components/SvgBackground'
+import SvgBackground1 from './components/SvgBackground1'
+import SvgBackground2 from './components/SvgBackground2'
 
 export default {
   components: {
     Cube,
-    SvgBackground
+    SvgBackground1,
+    SvgBackground2
   },
   metaInfo: {
     title: 'Shivam Goswami',
@@ -341,6 +425,7 @@ export default {
   mounted() {
     this.innerScreenHeight = this.$vuetify.breakpoint.height
     this.innerScreenWidth = this.$vuetify.breakpoint.width
+    console.log(this.$vuetify)
   },
   data() {
     return {
@@ -377,9 +462,6 @@ export default {
     }
   },
   methods: {
-    fillSvgCube() {
-      console.log('I was clicked')
-    }
   }
 }
 </script>
