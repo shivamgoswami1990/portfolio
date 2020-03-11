@@ -2,7 +2,7 @@
     <div id="app">
         <v-app>
             <!-- Top application bar -->
-            <v-app-bar app class="pt-3" elevation="0">
+            <v-app-bar app elevation="0" color="secondary" class="pt-1" height="65" style="z-index: 50">
                 <v-container class="d-flex">
 
                     <v-app-bar-nav-icon class="ml-4">
@@ -115,18 +115,19 @@
 
                 <svg-background2 :inner-screen-width="innerScreenWidth"
                                 :inner-screen-height="innerScreenHeight" :fill-svg="fillSvg"/>
-                <!-- Hero section with image as a background -->
-                <v-container :style="{ height: innerScreenHeight + 'px'}">
+
+                <!-- About section with image as a background -->
+                <v-container :style="{ 'min-height': innerScreenHeight + 'px'}">
                     <v-layout wrap fill-height justify-center align-center class="about-section">
 
                         <v-responsive>
                             <h1 class="display-3 ml-5 font-weight-medium">
-                                About me :
+                                About me
                             </h1>
 
                             <v-row class="pa-5" no-gutters>
-                                <v-col cols="12" md="6">
-                                    <v-card color="#1A1A1A" elevation="0" tile class="pa-12" height="335">
+                                <v-col cols="12" md="6" sm="6">
+                                    <v-card color="#1A1A1A" elevation="0" tile class="pa-12">
                                         <v-layout justify-space-between wrap>
                                             <v-responsive>
                                                 <h1 class="display-2 font-weight-medium">10</h1>
@@ -150,13 +151,14 @@
                                         </v-card-text>
                                     </v-card>
                                 </v-col>
-                                <v-col cols="12" md="6">
-                                    <v-card color="#303030" elevation="0" tile class="pa-12 location-card" height="335">
-                                        <Cube/>
-                                        <v-layout justify-space-between wrap fill-height column class="pl-12">
+                                <v-col cols="12" md="6" sm="6">
+                                    <v-card color="#303030" elevation="0" tile class="location-card"
+                                            height="100%" :class="$vuetify.breakpoint.mdAndUp ? 'pa-12' : 'pa-6'">
+                                        <hexagon v-if="$vuetify.breakpoint.mdAndUp"/>
+                                        <v-layout justify-space-between wrap fill-height column class="pa-6">
                                             <div>
                                                 <p class="text-uppercase subtitle-2 text-accent mb-0">Where I'm located</p>
-                                                <h2 class="text-uppercase">Canberra, Australia</h2>
+                                                <h2>Canberra, Australia</h2>
                                             </div>
 
                                             <div>
@@ -174,8 +176,32 @@
                             </v-row>
                         </v-responsive>
 
+                        <v-responsive class="mt-10">
+                            <h1 class="display-3 ml-5 font-weight-medium">
+                                Services
+                            </h1>
+
+                            <v-sheet elevation="0" color="transparent">
+                                <v-slide-group v-model="skillSlide" class="pa-4"
+                                               show-arrows>
+                                    <v-slide-item v-for="(skill, index) in skillsInfo" :key="index">
+
+                                        <v-card class="ma-4 pa-6" elevation="0" tile width="360">
+                                            <h2>{{skill.heading}}</h2>
+
+                                            <v-card-text class="pa-0 mt-4">
+                                                <p class="text-justify">{{skill.content}}</p>
+                                            </v-card-text>
+                                        </v-card>
+
+                                    </v-slide-item>
+                                </v-slide-group>
+                            </v-sheet>
+                        </v-responsive>
+
                     </v-layout>
                 </v-container>
+                <!-- About section with image as a background -->
 
             </v-content>
             <!-- Content -->
@@ -393,10 +419,10 @@
             .location-card {
                 position: relative;
 
-                .cube-wrapper {
+                .hexagon {
                     position: absolute;
-                    bottom: -55px;
-                    left: -80px;
+                    bottom: -20px;
+                    left: -25px;
                 }
             }
         }
@@ -407,12 +433,14 @@
 import Cube from './components/Cube'
 import SvgBackground1 from './components/SvgBackground1'
 import SvgBackground2 from './components/SvgBackground2'
+import Hexagon from './components/Hexagon'
 
 export default {
   components: {
     Cube,
     SvgBackground1,
-    SvgBackground2
+    SvgBackground2,
+    Hexagon
   },
   metaInfo: {
     title: 'Shivam Goswami',
@@ -458,6 +486,7 @@ export default {
           linkTo: ''
         }
       ],
+      skillSlide: null,
       fillSvg: false
     }
   },
