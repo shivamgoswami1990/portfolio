@@ -52,24 +52,30 @@ Vue.prototype.email = email
 Vue.prototype.linkedin = linkedin
 
 Vue.prototype.skillsInfo = [
-  { 'heading': 'Front-end Development', content: 'I have over 3 years of experience developing complex and' +
-      ' responsive dashboards, landing pages, sales websites. I have a good knowledge about performance' +
-      ' optimisations, mobile/tablet development, API interfacing, deployment etc. Over the course of this' +
-      ' period I have worked with various languages and frameworks such as JavaScript, HTML, CSS,' +
-      ' Bootstrap3/4, Material design specs, AngularJS, EmberJS, VueJS, SASS, Stylus, NPM, Webpack etc.'},
-  { 'heading': 'Server-side Development', content: 'With over 3 years of experience in server side languages such' +
-      ' as Ruby on Rails, Python, Flask, Django I have developed extensive APIs, DB design and interfacing,' +
-      ' authentication, authorisation, horizontal/vertical scaling, algorithms, cloud deployments,' +
-      ' maintenance, caching etc. During this time I have designed DB and backend architecture for' +
-      ' various applications using the frameworks mentioned above. '},
-  { 'heading': 'Cloud & DevOps', content: 'I have a good knowledge of deploying web apps on cloud platforms such' +
-      ' as AWS using services like RDS, Elasticache, Load balancing, domain forwarding, SSL certs,' +
-      ' firewalls, system scripts along with containerised support for pipelines, Docker, Vagrant, CouchDB,' +
-      ' MongoDB'},
-  { 'heading': 'System design', content: 'The majority of the work I have mentioned on this page has been along' +
-      ' the lines of system design as a starting point. This includes requirements elicitation, system' +
-      ' architecture, system design, budgeting, marketing and product lifecycles. I am a big proponent of' +
-      ' working with a agile mindset and maintaining transparency amongst clients, stakeholders and contracters.'}
+  {
+    icon: 'camera-enhance-outline',
+    heading: 'Front-end',
+    content: 'Experience developing complex and responsive dashboards, landing pages, sales websites.',
+    skills: ['HTML', 'CSS/CSS3', 'Bootstrap 3/4', 'Material design', 'VueJS', 'EmberJS', 'AngularJS', 'SASS', 'Stylus']
+  },
+  {
+    icon: 'tune-vertical',
+    heading: 'Back-end',
+    content: 'Experience developing extensive APIs, DB design and interfacing, authentication, authorisation,' +
+      ' horizontal/vertical scaling',
+    skills: ['Ruby on Rails', 'Django', 'Flask', 'API design & architecture', 'Server optimisation', 'Nginx', 'Apache']
+  },
+  {
+    icon: 'cloud-outline',
+    heading: 'Cloud',
+    content: 'Deploying, maintaining apps using Load balancing, domain forwarding, SSL certs, firewalls',
+    skills: ['AWS', 'GCP', 'Bitbucket pipelines', 'Bash', 'Security', 'Cert management']
+  },
+  {
+    icon: 'view-compact',
+    heading: 'Systems',
+    content: 'Requirements elicitation, system architecture, system design, budgeting, marketing and product life-cycles.'
+  }
 ]
 
 Vue.prototype.timelineInfo = [

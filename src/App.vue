@@ -127,7 +127,8 @@
 
                             <v-row class="pa-5" no-gutters>
                                 <v-col cols="12" md="6" sm="6">
-                                    <v-card color="#1A1A1A" elevation="0" tile class="pa-12">
+                                    <v-card :height="$vuetify.breakpoint.lgAndUp ? 350 : 400"
+                                            color="#1A1A1A" elevation="0" tile class="pa-12">
                                         <v-layout justify-space-between wrap>
                                             <v-responsive>
                                                 <h1 class="display-2 font-weight-medium">10</h1>
@@ -152,8 +153,9 @@
                                     </v-card>
                                 </v-col>
                                 <v-col cols="12" md="6" sm="6">
-                                    <v-card color="#303030" elevation="0" tile class="location-card"
-                                            height="100%" :class="$vuetify.breakpoint.mdAndUp ? 'pa-12' : 'pa-6'">
+                                    <v-card :height="$vuetify.breakpoint.lgAndUp ? 350 : 400"
+                                            color="#303030" elevation="0" tile class="location-card"
+                                           :class="$vuetify.breakpoint.mdAndUp ? 'pa-12' : 'pa-6'">
                                         <hexagon v-if="$vuetify.breakpoint.mdAndUp"/>
                                         <v-layout justify-space-between wrap fill-height column class="pa-6">
                                             <div>
@@ -181,22 +183,9 @@
                                 Services
                             </h1>
 
-                            <v-sheet elevation="0" color="transparent">
-                                <v-slide-group v-model="skillSlide" class="pa-4"
-                                               show-arrows>
-                                    <v-slide-item v-for="(skill, index) in skillsInfo" :key="index">
-
-                                        <v-card class="ma-4 pa-6" elevation="0" tile width="360">
-                                            <h2>{{skill.heading}}</h2>
-
-                                            <v-card-text class="pa-0 mt-4">
-                                                <p class="text-justify">{{skill.content}}</p>
-                                            </v-card-text>
-                                        </v-card>
-
-                                    </v-slide-item>
-                                </v-slide-group>
-                            </v-sheet>
+                            <!-- Services carousel -->
+                            <services-carousel/>
+                            <!-- Services carousel -->
                         </v-responsive>
 
                     </v-layout>
@@ -434,13 +423,15 @@ import Cube from './components/Cube'
 import SvgBackground1 from './components/SvgBackground1'
 import SvgBackground2 from './components/SvgBackground2'
 import Hexagon from './components/Hexagon'
+import ServicesCarousel from './components/ServicesCarousel'
 
 export default {
   components: {
     Cube,
     SvgBackground1,
     SvgBackground2,
-    Hexagon
+    Hexagon,
+    ServicesCarousel
   },
   metaInfo: {
     title: 'Shivam Goswami',
