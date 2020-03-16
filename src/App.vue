@@ -121,7 +121,7 @@
                     <v-layout wrap fill-height justify-center align-center class="about-section">
 
                         <v-responsive>
-                            <h1 class="display-3 ml-5 font-weight-medium">
+                            <h1 class="display-3 ml-5 font-weight-medium text-uppercase">
                                 About me
                             </h1>
 
@@ -179,7 +179,7 @@
                         </v-responsive>
 
                         <v-responsive class="mt-10">
-                            <h1 class="display-3 ml-5 font-weight-medium">
+                            <h1 class="display-3 ml-5 font-weight-medium text-uppercase">
                                 Services
                             </h1>
 
@@ -191,6 +191,60 @@
                     </v-layout>
                 </v-container>
                 <!-- About section with image as a background -->
+
+                <svg-background2 :inner-screen-width="innerScreenWidth"
+                                 :inner-screen-height="innerScreenHeight" :fill-svg="fillSvg"/>
+
+                <!-- Timeline section -->
+                <v-container :style="{ 'min-height': innerScreenHeight + 'px'}">
+                    <v-layout wrap fill-height justify-center align-center class="timeline-section">
+
+                        <v-responsive>
+                            <h1 class="display-3 ml-5 font-weight-medium text-uppercase">
+                                Where I've Been
+                            </h1>
+
+                            <v-layout wrap fill-height justify-center align-center>
+                                <v-timeline :dense="$vuetify.breakpoint.smAndDown">
+                                    <v-timeline-item v-for="(timeline, index) in timelineInfo"
+                                                     :key="index" class="timeline-item">
+                                        <template v-slot:icon>
+                                            <v-avatar size="60">
+                                                <v-img :src="timeline.image" contain/>
+                                            </v-avatar>
+                                        </template>
+                                        <template v-slot:opposite>
+                                            <span class="text-uppercase caption px-5">
+                                                {{timeline.date}}
+                                            </span>
+                                        </template>
+                                        <v-card flat tile color="transparent" class="timeline-card"
+                                                :height="$vuetify.breakpoint.smAndDown ? 250 : 200">
+                                            <v-card-title>
+                                                <p class="title font-weight-bold"
+                                                   :class="$vuetify.breakpoint.smAndDown ?
+                                                   '' : (index % 2 === 0) ? 'text-right' : ''">
+                                                    {{timeline.contentHeading}}
+                                                </p>
+                                                <p class="text-primary subtitle-2"
+                                                   :class="$vuetify.breakpoint.smAndDown ?
+                                                   '' : (index % 2 === 0) ? 'text-right' : ''">
+                                                    {{timeline.contentSubheading}}
+                                                </p>
+                                            </v-card-title>
+                                            <v-card-text :class="$vuetify.breakpoint.smAndDown ?
+                                                   '' : (index % 2 === 0) ? 'text-right' : ''">
+                                                {{timeline.contentBody}}
+                                            </v-card-text>
+                                        </v-card>
+                                    </v-timeline-item>
+                                </v-timeline>
+                            </v-layout>
+                        </v-responsive>
+
+                    </v-layout>
+                </v-container>
+                <!-- Timeline section -->
 
             </v-content>
             <!-- Content -->
@@ -412,6 +466,59 @@
                     position: absolute;
                     bottom: -20px;
                     left: -25px;
+                }
+            }
+        }
+
+        .timeline-section {
+            .v-timeline {
+                &:before {
+                    background: #F7A300;
+                    width: 1px;
+                }
+
+                .v-timeline-item__divider {
+                    position: relative;
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        border-radius: 50%;
+                        width: 90px;
+                        height: 90px;
+                        background: #232323;
+                    }
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        border-radius: 50%;
+                        width: 100px;
+                        height: 100px;
+                        opacity: 0.2;
+                        background-image: radial-gradient(circle, white, black);
+                    }
+                    .v-timeline-item__dot {
+                        .v-avatar {
+
+                        }
+                    }
+                }
+            }
+            .timeline-card {
+                padding: 0;
+                .v-card__title {
+                    border-bottom: 1px solid #F7A300;
+                    padding: 15px 0;
+                    height: 50%;
+                    p {
+                        width: 100%;
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+
+                .v-card__text {
+                    padding: 15px 0;
+                    height: 50%;
                 }
             }
         }
