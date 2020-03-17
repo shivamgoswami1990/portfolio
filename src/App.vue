@@ -45,77 +45,82 @@
                 <svg-background1 :inner-screen-width="innerScreenWidth"
                                 :inner-screen-height="innerScreenHeight" :fill-svg="fillSvg"/>
                 <!-- Hero section with image as a background -->
-                    <v-container :style="{ height: innerScreenHeight + 'px'}">
-                        <v-layout wrap fill-height class="hero-section svg-v-line-section">
-                            <div class="svg-v-line-container">
-                                <svg class="v-line" preserveAspectRatio="none">
-                                    <line :stroke="$vuetify.theme.defaults.dark.primary" stroke-width="2"
-                                          fill="none" x1="0" y1="0" x2="0" y2="100%"/>
-                                </svg>
+                <v-container :style="{ height: innerScreenHeight + 'px'}">
+                    <v-layout wrap fill-height class="hero-section svg-v-line-section">
+                        <div class="svg-v-line-container">
+                            <svg class="v-line" preserveAspectRatio="none">
+                                <line :stroke="$vuetify.theme.defaults.dark.primary" stroke-width="2"
+                                      fill="none" x1="0" y1="0" x2="0" y2="100%"/>
+                            </svg>
 
-                                <div class="scroll-downs" @click="fillSvg = !fillSvg">
-                                    <div class="mousey">
-                                        <div class="scroller"></div>
-                                    </div>
+                            <div class="scroll-downs" @click="fillSvg = !fillSvg">
+                                <div class="mousey">
+                                    <div class="scroller"></div>
                                 </div>
                             </div>
+                        </div>
 
-                            <v-layout wrap fill-height class="layer-container">
-                                <!-- Background layer -->
-                                <div class="background-layer">
-                                    <v-layout fill-height wrap align-end justify-center row>
-                                        <div class="title-container">
-                                            <Cube :fill-svg="fillSvg" v-if="$vuetify.breakpoint.lgAndUp"/>
-                                            <div class="title-wrapper" v-if="$vuetify.breakpoint.smAndUp">
-                                                <p class="text-accent display-1">Front-end</p>
-                                                <p class="text-accent">Developer</p>
-                                            </div>
+                        <v-layout wrap fill-height class="layer-container">
+                            <!-- Background layer -->
+                            <div class="background-layer">
+                                <v-layout fill-height wrap align-end justify-center row>
+                                    <div class="title-container">
+                                        <Cube :fill-svg="fillSvg" v-if="$vuetify.breakpoint.lgAndUp"/>
+                                        <div class="title-wrapper">
+                                            <p class="text-accent"
+                                               :class="$vuetify.breakpoint.smAndUp ? 'display-1': 'headline'">
+                                                Front-end
+                                            </p>
+                                            <p class="text-accent"
+                                               :class="$vuetify.breakpoint.smAndUp ? '': 'display-3'">
+                                                Developer
+                                            </p>
                                         </div>
-                                    </v-layout>
-                                </div>
-                                <!-- Background layer -->
+                                    </div>
+                                </v-layout>
+                            </div>
+                            <!-- Background layer -->
 
-                                <!-- Foreground layer -->
-                                <div class="foreground-layer">
-                                    <v-layout fill-height wrap justify-center align-center class="pl-5 banner-container">
+                            <!-- Foreground layer -->
+                            <div class="foreground-layer">
+                                <v-layout fill-height wrap justify-center align-center class="pl-5 banner-container">
+                                    <div class="cube-container">
+                                        <Cube :fill-svg="fillSvg"/>
+                                    </div>
+                                    <v-responsive>
+                                        <h3 v-html="'< h1 >'" class="mb-5 text-accent opacity font-italic"/>
+                                        <h1 class="display-3 ml-5 font-weight-medium">
+                                            Hi <br>
+                                            I'm Shiv
+                                        </h1>
+                                        <h3 v-html="'< h1 />'" class="mt-5 text-accent opacity font-italic"/>
+
+                                        <a class="text-primary font-weight-bold pt-5">View projects</a>
+                                    </v-responsive>
+
+                                    <v-responsive class="menu-container" v-if="$vuetify.breakpoint.smAndUp">
                                         <div class="cube-container">
-                                            <Cube :fill-svg="fillSvg"/>
+                                            <Cube :fill-svg="fillSvg" v-if="$vuetify.breakpoint.mdAndUp"/>
                                         </div>
-                                        <v-responsive>
-                                            <h3 v-html="'< h1 >'" class="mb-5 text-accent opacity font-italic"/>
-                                            <h1 class="display-3 ml-5 font-weight-medium">
-                                                Hi <br>
-                                                I'm Shiv
-                                            </h1>
-                                            <h3 v-html="'< h1 />'" class="mt-5 text-accent opacity font-italic"/>
-
-                                            <a class="text-primary font-weight-bold pt-5">View projects</a>
-                                        </v-responsive>
-
-                                        <v-responsive class="menu-container" v-if="$vuetify.breakpoint.smAndUp">
-                                            <div class="cube-container">
-                                                <Cube :fill-svg="fillSvg" v-if="$vuetify.breakpoint.mdAndUp"/>
-                                            </div>
-                                            <ul class="landing-menu">
-                                                <li v-for="(item, index) in landingMenu" :key="index">
-                                                    <div class="menu-name caption">{{item.name}}</div>
-                                                    <div class="menu-extension"/>
-                                                    <div class="menu-order caption">{{item.order}}</div>
-                                                </li>
-                                            </ul>
-                                        </v-responsive>
-                                    </v-layout>
-                                </div>
-                                <!-- Foreground layer -->
-                            </v-layout>
-
+                                        <ul class="landing-menu">
+                                            <li v-for="(item, index) in landingMenu" :key="index">
+                                                <div class="menu-name caption">{{item.name}}</div>
+                                                <div class="menu-extension"/>
+                                                <div class="menu-order caption">{{item.order}}</div>
+                                            </li>
+                                        </ul>
+                                    </v-responsive>
+                                </v-layout>
+                            </div>
+                            <!-- Foreground layer -->
                         </v-layout>
-                    </v-container>
+
+                    </v-layout>
+                </v-container>
                 <!-- Hero section with image as a background -->
 
                 <svg-background2 :inner-screen-width="innerScreenWidth"
                                 :inner-screen-height="innerScreenHeight" :fill-svg="fillSvg"/>
-
                 <!-- About section with image as a background -->
                 <v-container :style="{ 'min-height': innerScreenHeight + 'px'}">
                     <v-layout wrap fill-height justify-center align-center class="about-section">
@@ -192,9 +197,8 @@
                 </v-container>
                 <!-- About section with image as a background -->
 
-                <svg-background2 :inner-screen-width="innerScreenWidth"
+                <svg-background3 :inner-screen-width="innerScreenWidth"
                                  :inner-screen-height="innerScreenHeight" :fill-svg="fillSvg"/>
-
                 <!-- Timeline section -->
                 <v-container :style="{ 'min-height': innerScreenHeight + 'px'}">
                     <v-layout wrap fill-height justify-center align-center class="timeline-section">
@@ -529,6 +533,7 @@
 import Cube from './components/Cube'
 import SvgBackground1 from './components/SvgBackground1'
 import SvgBackground2 from './components/SvgBackground2'
+import SvgBackground3 from './components/SvgBackground3'
 import Hexagon from './components/Hexagon'
 import ServicesCarousel from './components/ServicesCarousel'
 
@@ -537,6 +542,7 @@ export default {
     Cube,
     SvgBackground1,
     SvgBackground2,
+    SvgBackground3,
     Hexagon,
     ServicesCarousel
   },
