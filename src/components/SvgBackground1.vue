@@ -1,9 +1,9 @@
 <template>
     <svg class="svg-container1" :width="innerScreenWidth" :height="innerScreenHeight" preserveAspectRatio="none">
         <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" style="stop-color:#303030;stop-opacity:1" />
-            <stop offset="40%" style="stop-color:#232323;stop-opacity:1" />
-            <stop offset="100%" style="stop-color:#080808;stop-opacity:1" />
+            <stop offset="0%" style="stop-color:#141414;stop-opacity:1" />
+            <stop offset="40%" style="stop-color:#303030;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#141414;stop-opacity:1" />
         </linearGradient>
         <path stroke-width="3" fill="url(#gradient1)"
               :d="'M ' + innerScreenWidth + ' 0' +

@@ -2,7 +2,7 @@
     <div id="app">
         <v-app>
             <!-- Top application bar -->
-            <v-app-bar app elevation="0" color="secondary" class="pt-1" height="65" style="z-index: 50">
+            <v-app-bar app elevation="0" class="pt-1" height="65" style="z-index: 50">
                 <v-container class="d-flex">
 
                     <v-app-bar-nav-icon class="ml-4">
@@ -28,12 +28,14 @@
                     </v-avatar>
 
                     <v-btn text height="55" class="mx-2 font-weight-bold text-capitalize px-2">
-                        <v-img :src="require('./assets/linkedin-white.png')" class="mr-1 mb-2" max-width="22"/>
+                        <v-img :src="require('./assets/social/linkedin-white.png')"
+                               class="mr-1 mb-2" max-width="22"/>
                         Linkedin
                     </v-btn>
 
                     <v-btn text height="55" class="mx-2 font-weight-bold text-capitalize px-2">
-                        <v-img :src="require('./assets/github-white.png')" class="mr-1 mb-2" max-width="22"/>
+                        <v-img :src="require('./assets/social/github-white.png')"
+                               class="mr-1 mb-2" max-width="22"/>
                         Github
                     </v-btn>
                 </v-container>
@@ -119,71 +121,75 @@
                 </v-container>
                 <!-- Hero section with image as a background -->
 
-                <svg-background2 :inner-screen-width="innerScreenWidth"
-                                :inner-screen-height="innerScreenHeight" :fill-svg="fillSvg"/>
                 <!-- About section with image as a background -->
-                <v-container :style="{ 'min-height': innerScreenHeight + 'px'}">
-                    <v-layout wrap fill-height justify-center align-center class="about-section">
+                <div class="about-section">
+                    <v-img :src="require('@/assets/shapes/oval-1.png')" contain class="bg-image1"
+                           width="100%" :height="innerScreenHeight"/>
 
-                        <v-responsive>
-                            <h1 class="display-3 ml-5 font-weight-medium text-uppercase">
-                                About me
-                            </h1>
+                    <v-img :src="require('@/assets/shapes/oval-2.png')" contain class="bg-image2"
+                           width="100%" :height="innerScreenHeight"/>
 
-                            <v-row class="pa-5" no-gutters>
-                                <v-col cols="12" md="6" sm="6">
-                                    <v-card :height="$vuetify.breakpoint.lgAndUp ? 350 : 400"
-                                            color="#1A1A1A" elevation="0" tile class="pa-12">
-                                        <v-layout justify-space-between wrap>
-                                            <v-responsive>
-                                                <h1 class="display-2 font-weight-medium">10</h1>
-                                                <p class="text-primary text-uppercase subtitle-2">Years of experience</p>
-                                            </v-responsive>
-                                            <v-responsive>
-                                                <h1 class="display-2 font-weight-medium">26</h1>
-                                                <p class="text-primary text-uppercase subtitle-2">Years old</p>
-                                            </v-responsive>
-                                        </v-layout>
+                    <v-layout wrap fill-height justify-center align-center class="foreground-layer">
 
-                                        <v-card-text class="pa-0">
-                                            <p class="text-justify">
-                                                An enthusiastic, ambitious, self-taught Software Developer
-                                                with over three years of industry experience.
-                                                I have worked with various companies over this period managing
-                                                and working on multiple projects. I've always been a part of agile
-                                                team structure and have worked with languages such as Ruby,
-                                                Python, AngularJS, VueJS, Wordpress etc.
-                                            </p>
-                                        </v-card-text>
-                                    </v-card>
-                                </v-col>
-                                <v-col cols="12" md="6" sm="6">
-                                    <v-card :height="$vuetify.breakpoint.lgAndUp ? 350 : 400"
-                                            color="#303030" elevation="0" tile class="location-card"
-                                           :class="$vuetify.breakpoint.mdAndUp ? 'pa-12' : 'pa-6'">
-                                        <hexagon v-if="$vuetify.breakpoint.mdAndUp"/>
-                                        <v-layout justify-space-between wrap fill-height column class="pa-6">
-                                            <div>
-                                                <p class="text-uppercase subtitle-2 text-accent mb-0">Where I'm located</p>
-                                                <h2>Canberra, Australia</h2>
-                                            </div>
+                        <v-container :style="{ 'min-height': innerScreenHeight + 'px'}">
+                            <v-responsive>
+                                <h1 class="display-3 ml-5 font-weight-medium text-uppercase">
+                                    About me
+                                </h1>
 
-                                            <div>
-                                                <p class="text-uppercase subtitle-2 text-accent mb-0">Email</p>
-                                                <h2>shiv15101990@gmail.com</h2>
-                                            </div>
+                                <v-row class="pa-5" no-gutters>
+                                    <v-col cols="12" md="6" sm="6">
+                                        <v-card :height="$vuetify.breakpoint.lgAndUp ? 350 : 400"
+                                                color="#1A1A1A" elevation="0" tile class="pa-12">
+                                            <v-layout justify-space-between wrap>
+                                                <v-responsive>
+                                                    <h1 class="display-2 font-weight-medium">10</h1>
+                                                    <p class="text-primary text-uppercase subtitle-2">Years of experience</p>
+                                                </v-responsive>
+                                                <v-responsive>
+                                                    <h1 class="display-2 font-weight-medium">26</h1>
+                                                    <p class="text-primary text-uppercase subtitle-2">Years old</p>
+                                                </v-responsive>
+                                            </v-layout>
 
-                                            <div>
-                                                <p class="text-uppercase subtitle-2 text-accent mb-0">Phone</p>
-                                                <h2>+61 416530555</h2>
-                                            </div>
-                                        </v-layout>
-                                    </v-card>
-                                </v-col>
-                            </v-row>
-                        </v-responsive>
+                                            <v-card-text class="pa-0">
+                                                <p class="text-justify">
+                                                    An enthusiastic, ambitious, self-taught Software Developer
+                                                    with over three years of industry experience.
+                                                    I have worked with various companies over this period managing
+                                                    and working on multiple projects. I've always been a part of agile
+                                                    team structure and have worked with languages such as Ruby,
+                                                    Python, AngularJS, VueJS, Wordpress etc.
+                                                </p>
+                                            </v-card-text>
+                                        </v-card>
+                                    </v-col>
+                                    <v-col cols="12" md="6" sm="6">
+                                        <v-card :height="$vuetify.breakpoint.lgAndUp ? 350 : 400"
+                                                color="#303030" elevation="0" tile class="location-card"
+                                               :class="$vuetify.breakpoint.mdAndUp ? 'pa-12' : 'pa-6'">
+                                            <v-layout justify-space-between wrap fill-height column class="pa-6">
+                                                <div>
+                                                    <p class="text-uppercase subtitle-2 text-accent mb-0">Where I'm located</p>
+                                                    <h2>Canberra, Australia</h2>
+                                                </div>
 
-                        <v-responsive class="mt-10">
+                                                <div>
+                                                    <p class="text-uppercase subtitle-2 text-accent mb-0">Email</p>
+                                                    <h2>shiv15101990@gmail.com</h2>
+                                                </div>
+
+                                                <div>
+                                                    <p class="text-uppercase subtitle-2 text-accent mb-0">Phone</p>
+                                                    <h2>+61 416530555</h2>
+                                                </div>
+                                            </v-layout>
+                                        </v-card>
+                                    </v-col>
+                                </v-row>
+                            </v-responsive>
+
+                            <v-responsive class="mt-10">
                             <h1 class="display-3 ml-5 font-weight-medium text-uppercase">
                                 Services
                             </h1>
@@ -192,62 +198,65 @@
                             <services-carousel/>
                             <!-- Services carousel -->
                         </v-responsive>
+                        </v-container>
 
                     </v-layout>
-                </v-container>
+                </div>
                 <!-- About section with image as a background -->
 
-                <svg-background3 :inner-screen-width="innerScreenWidth"
-                                 :inner-screen-height="innerScreenHeight" :fill-svg="fillSvg"/>
                 <!-- Timeline section -->
-                <v-container :style="{ 'min-height': innerScreenHeight + 'px'}">
-                    <v-layout wrap fill-height justify-center align-center class="timeline-section">
+                <div class="timeline-section">
+                    <v-img :src="require('@/assets/shapes/oval-3.png')" contain class="bg-image1"
+                           width="100%" :height="innerScreenHeight"/>
+                    <v-container :style="{ 'min-height': innerScreenHeight + 'px'}">
+                        <v-layout wrap fill-height justify-center align-center>
 
-                        <v-responsive>
-                            <h1 class="display-3 ml-5 font-weight-medium text-uppercase">
-                                Where I've Been
-                            </h1>
+                            <v-responsive>
+                                <h1 class="display-3 ml-5 font-weight-medium text-uppercase">
+                                    Where I've Been
+                                </h1>
 
-                            <v-layout wrap fill-height justify-center align-center>
-                                <v-timeline :dense="$vuetify.breakpoint.smAndDown">
-                                    <v-timeline-item v-for="(timeline, index) in timelineInfo"
-                                                     :key="index" class="timeline-item">
-                                        <template v-slot:icon>
-                                            <v-avatar size="60">
-                                                <v-img :src="timeline.image" contain/>
-                                            </v-avatar>
-                                        </template>
-                                        <template v-slot:opposite>
-                                            <span class="text-uppercase caption px-5">
-                                                {{timeline.date}}
-                                            </span>
-                                        </template>
-                                        <v-card flat tile color="transparent" class="timeline-card"
-                                                :height="$vuetify.breakpoint.smAndDown ? 250 : 200">
-                                            <v-card-title>
-                                                <p class="title font-weight-bold"
-                                                   :class="$vuetify.breakpoint.smAndDown ?
-                                                   '' : (index % 2 === 0) ? 'text-right' : ''">
-                                                    {{timeline.contentHeading}}
-                                                </p>
-                                                <p class="text-primary subtitle-2"
-                                                   :class="$vuetify.breakpoint.smAndDown ?
-                                                   '' : (index % 2 === 0) ? 'text-right' : ''">
-                                                    {{timeline.contentSubheading}}
-                                                </p>
-                                            </v-card-title>
-                                            <v-card-text :class="$vuetify.breakpoint.smAndDown ?
-                                                   '' : (index % 2 === 0) ? 'text-right' : ''">
-                                                {{timeline.contentBody}}
-                                            </v-card-text>
-                                        </v-card>
-                                    </v-timeline-item>
-                                </v-timeline>
-                            </v-layout>
-                        </v-responsive>
+                                <v-layout wrap fill-height justify-center align-center>
+                                    <v-timeline :dense="$vuetify.breakpoint.smAndDown">
+                                        <v-timeline-item v-for="(timeline, index) in timelineInfo"
+                                                         :key="index" class="timeline-item">
+                                            <template v-slot:icon>
+                                                <v-avatar size="60">
+                                                    <v-img :src="require('@/assets/' + timeline.imagePath)" contain/>
+                                                </v-avatar>
+                                            </template>
+                                            <template v-slot:opposite>
+                                                <span class="text-uppercase caption px-5">
+                                                    {{timeline.date}}
+                                                </span>
+                                            </template>
+                                            <v-card flat tile color="transparent" class="timeline-card"
+                                                    :height="$vuetify.breakpoint.smAndDown ? 250 : 200">
+                                                <v-card-title>
+                                                    <p class="title font-weight-bold"
+                                                       :class="$vuetify.breakpoint.smAndDown ?
+                                                       '' : (index % 2 === 0) ? 'text-right' : ''">
+                                                        {{timeline.contentHeading}}
+                                                    </p>
+                                                    <p class="text-primary subtitle-2"
+                                                       :class="$vuetify.breakpoint.smAndDown ?
+                                                       '' : (index % 2 === 0) ? 'text-right' : ''">
+                                                        {{timeline.contentSubheading}}
+                                                    </p>
+                                                </v-card-title>
+                                                <v-card-text :class="$vuetify.breakpoint.smAndDown ?
+                                                       '' : (index % 2 === 0) ? 'text-right' : ''">
+                                                    {{timeline.contentBody}}
+                                                </v-card-text>
+                                            </v-card>
+                                        </v-timeline-item>
+                                    </v-timeline>
+                                </v-layout>
+                            </v-responsive>
 
-                    </v-layout>
-                </v-container>
+                        </v-layout>
+                    </v-container>
+                </div>
                 <!-- Timeline section -->
 
             </v-content>
@@ -463,18 +472,35 @@
         }
 
         .about-section {
-            .location-card {
-                position: relative;
+            position: relative;
 
-                .hexagon {
-                    position: absolute;
-                    bottom: -20px;
-                    left: -25px;
+            .bg-image1 {
+                position: absolute;
+                .v-image__image.v-image__image--contain {
+                    background-position: right !important;
+                }
+            }
+
+            .bg-image2 {
+                position: absolute;
+                top: 70%;
+                .v-image__image.v-image__image--contain {
+                    background-position: left !important;
                 }
             }
         }
 
         .timeline-section {
+            position: relative;
+
+            .bg-image1 {
+                position: absolute;
+                top: 30%;
+                .v-image__image.v-image__image--contain {
+                    background-position: right !important;
+                }
+            }
+
             .v-timeline {
                 &:before {
                     background: #F7A300;
@@ -507,6 +533,7 @@
                     }
                 }
             }
+
             .timeline-card {
                 padding: 0;
                 .v-card__title {
@@ -532,18 +559,12 @@
 <script>
 import Cube from './components/Cube'
 import SvgBackground1 from './components/SvgBackground1'
-import SvgBackground2 from './components/SvgBackground2'
-import SvgBackground3 from './components/SvgBackground3'
-import Hexagon from './components/Hexagon'
 import ServicesCarousel from './components/ServicesCarousel'
 
 export default {
   components: {
     Cube,
     SvgBackground1,
-    SvgBackground2,
-    SvgBackground3,
-    Hexagon,
     ServicesCarousel
   },
   metaInfo: {

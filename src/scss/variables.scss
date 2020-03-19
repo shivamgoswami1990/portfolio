@@ -1,17 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
-@import '~vuetify/src/styles/styles.sass';
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+@import '~vuetify/src/styles/settings/variables';
 
 $material-dark: (
-        'app-bar': transparent,
+        'app-bar': #141414,
         'bottom-navigation': #424242,
-        'background': #1D1D1D,
-        'cards': #1D1D1D,
+        'background': #141414,
+        'cards': #1b1b1b,
         'navigation-drawer': #1D1D1D,
-        'toolbar': #1D1D1D
+        'toolbar': #141414
 );
 
 $font-size-root: 16px;
-$body-font-family: 'Raleway', sans-serif;
+$body-font-family: 'Oswald', sans-serif;
+$border-radius-root: 0;
 $card-border-radius: 0;
 $chip-label-border-radius: 0;
 
