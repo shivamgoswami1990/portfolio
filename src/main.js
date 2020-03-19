@@ -4,26 +4,26 @@ import vuetify from './plugins/vuetify'
 
 Vue.prototype.skillsInfo = [
   {
-    icon: 'camera-enhance-outline',
+    imagePath: 'fed.png',
     heading: 'Front-end',
     content: 'Experience developing complex and responsive dashboards, landing pages, sales websites.',
     skills: ['HTML', 'CSS/CSS3', 'Bootstrap 3/4', 'Material design', 'VueJS', 'EmberJS', 'AngularJS', 'SASS', 'Stylus']
   },
   {
-    icon: 'tune-vertical',
+    imagePath: 'bed.png',
     heading: 'Back-end',
     content: 'Experience developing extensive APIs, DB design and interfacing, authentication, authorisation,' +
       ' horizontal/vertical scaling',
     skills: ['Ruby on Rails', 'Django', 'Flask', 'API design & architecture', 'Server optimisation', 'Nginx', 'Apache']
   },
   {
-    icon: 'cloud-outline',
+    imagePath: 'cloud.png',
     heading: 'Cloud',
     content: 'Deploying, maintaining apps using Load balancing, domain forwarding, SSL certs, firewalls',
     skills: ['AWS', 'GCP', 'Bitbucket pipelines', 'Bash', 'Security', 'Cert management']
   },
   {
-    icon: 'view-compact',
+    imagePath: 'sysdesign.png',
     heading: 'Systems',
     content: 'Requirements elicitation, system architecture, system design, budgeting, marketing and product life-cycles.'
   }

@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
-@import '~vuetify/src/styles/settings/variables';
+
+$body-font-family: 'Oswald', sans-serif;
+$heading-font-family: $body-font-family;
+
+$color-pack: false;
+$border-radius-root: 0;
+$card-border-radius: 0;
+$chip-label-border-radius: 0;
+
+// For updating SASS lists
+$ripple-animation-transition-in: none;
+$ripple-animation-transition-out: none;
+$ripple-animation-visible-opacity: none;
+
+@import '~vuetify/src/styles/styles';
 
 $material-dark: (
         'app-bar': #141414,
@@ -9,14 +23,3 @@ $material-dark: (
         'navigation-drawer': #1D1D1D,
         'toolbar': #141414
 );
-
-$font-size-root: 16px;
-$body-font-family: 'Oswald', sans-serif;
-$border-radius-root: 0;
-$card-border-radius: 0;
-$chip-label-border-radius: 0;
-
-// For updating SASS lists
-$ripple-animation-transition-in: none;
-$ripple-animation-transition-out: none;
-$ripple-animation-visible-opacity: none;

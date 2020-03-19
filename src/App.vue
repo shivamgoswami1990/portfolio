@@ -122,16 +122,18 @@
                 <!-- Hero section with image as a background -->
 
                 <!-- About section with image as a background -->
-                <div class="about-section">
+                <div class="about-section padding-mt">
                     <v-img :src="require('@/assets/shapes/oval-1.png')" contain class="bg-image1"
                            width="100%" :height="innerScreenHeight"/>
 
                     <v-img :src="require('@/assets/shapes/oval-2.png')" contain class="bg-image2"
                            width="100%" :height="innerScreenHeight"/>
 
+                    <v-img :src="require('@/assets/shapes/cube-2.png')" contain class="cube-2"/>
+
                     <v-layout wrap fill-height justify-center align-center class="foreground-layer">
 
-                        <v-container :style="{ 'min-height': innerScreenHeight + 'px'}">
+                        <v-container>
                             <v-responsive>
                                 <h1 class="display-3 ml-5 font-weight-medium text-uppercase">
                                     About me
@@ -168,6 +170,7 @@
                                         <v-card :height="$vuetify.breakpoint.lgAndUp ? 350 : 400"
                                                 color="#303030" elevation="0" tile class="location-card"
                                                :class="$vuetify.breakpoint.mdAndUp ? 'pa-12' : 'pa-6'">
+                                            <v-img :src="require('@/assets/shapes/cube-1.png')" contain class="cube-1"/>
                                             <v-layout justify-space-between wrap fill-height column class="pa-6">
                                                 <div>
                                                     <p class="text-uppercase subtitle-2 text-accent mb-0">Where I'm located</p>
@@ -189,15 +192,13 @@
                                 </v-row>
                             </v-responsive>
 
-                            <v-responsive class="mt-10">
-                            <h1 class="display-3 ml-5 font-weight-medium text-uppercase">
-                                Services
-                            </h1>
+                            <v-responsive class="section-mt">
+                                <h1 class="display-3 ml-5 font-weight-medium text-uppercase">
+                                    Services
+                                </h1>
 
-                            <!-- Services carousel -->
-                            <services-carousel/>
-                            <!-- Services carousel -->
-                        </v-responsive>
+                                <services-carousel/>
+                            </v-responsive>
                         </v-container>
 
                     </v-layout>
@@ -205,7 +206,7 @@
                 <!-- About section with image as a background -->
 
                 <!-- Timeline section -->
-                <div class="timeline-section">
+                <div class="timeline-section section-mt">
                     <v-img :src="require('@/assets/shapes/oval-3.png')" contain class="bg-image1"
                            width="100%" :height="innerScreenHeight"/>
                     <v-container :style="{ 'min-height': innerScreenHeight + 'px'}">
@@ -270,6 +271,10 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
 
+        p, .v-card__text {
+            font-size: 16px;
+        }
+
         .text-accent {
             color: #616161;
         }
@@ -294,6 +299,10 @@
         .app-nar-nav-icon-position {
             position: absolute;
             left: -24px;
+        }
+
+        .section-mt, .padding-mt {
+            margin-top: 80px;
         }
 
         .svg-v-line-section {
@@ -486,6 +495,33 @@
                 top: 70%;
                 .v-image__image.v-image__image--contain {
                     background-position: left !important;
+                }
+            }
+
+            .cube-2 {
+                position: absolute;
+                top: 50%;
+                left: 30%;
+            }
+
+            .foreground-layer {
+                .services-section {
+                    position: relative;
+                    .cube-2 {
+                        position: absolute;
+                        top: -10px;
+                        left: 260px;
+                    }
+                }
+
+                .location-card {
+                    position: relative;
+                    .cube-1 {
+                        position: absolute;
+                        top: -40px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
                 }
             }
         }

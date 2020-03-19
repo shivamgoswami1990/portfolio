@@ -23,7 +23,8 @@
                             </v-layout>
                         </v-scale-transition>
 
-                        <v-icon color="primary" size="35" class="mb-4" v-if="!hover">{{'mdi-' + skill.icon}}</v-icon>
+                        <v-img class="mb-4" v-if="!hover" width="40"
+                               :src="require('@/assets/' + skill.imagePath)"/>
                         <h2 v-if="!hover" class="headline">{{skill.heading}}</h2>
                         <v-card-text class="pa-0" v-if="!hover">
                             <p class="mt-6 text-justify">{{skill.content}}</p>
