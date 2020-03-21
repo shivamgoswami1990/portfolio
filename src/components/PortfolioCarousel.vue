@@ -1,6 +1,6 @@
 <template>
     <v-container class="portfolio-container">
-        <v-slide-group show-arrows class="skills-slide-group">
+        <v-slide-group show-arrows class="portfolio-slide-group">
             <v-slide-item v-for="(portfolio, index) in projectDescriptions" :key="index">
 
                 <div class="d-flex">
@@ -43,9 +43,20 @@
                         </v-layout>
                     </v-card>
 
-                    <v-card color="#303030" elevation="0" tile class="pa-12"
+                    <v-card color="#303030" elevation="0" tile class="pa-12 overflow-hidden"
                             :width="portfolioContainerWidth/2 - 24" height="500">
-                        Yes
+
+                        <div class="device device-macbook device-spacegray">
+                            <div class="device-frame">
+                                <img class="device-content" :src="require('@/assets/' + portfolio.imagePath)">
+                            </div>
+                            <div class="device-stripe"></div>
+                            <div class="device-header"></div>
+                            <div class="device-sensors"></div>
+                            <div class="device-btns"></div>
+                            <div class="device-power"></div>
+                        </div>
+
                     </v-card>
                 </div>
 
@@ -59,11 +70,11 @@
         opacity: 0.7;
     }
 
-    .skills-slide-group {
+    .portfolio-slide-group {
         position: relative;
         .v-slide-group__prev, .v-slide-group__next {
             position: absolute;
-            top: -50px;
+            top: -70px;
             border: 1px solid #303030;
             width: 50px;
             height: 40px;
