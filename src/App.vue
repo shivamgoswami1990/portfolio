@@ -210,7 +210,13 @@
                     <v-img :src="require('@/assets/shapes/oval-3.png')" contain class="bg-image1"
                            width="100%" :height="innerScreenHeight"/>
                     <v-container :style="{ 'min-height': innerScreenHeight + 'px'}">
-                        <v-layout wrap fill-height justify-center align-center>
+                        <v-layout wrap fill-height justify-center align-center class="timeline-layout">
+
+                            <v-img :src="require('@/assets/shapes/cube-2.png')" contain class="cube-1"/>
+                            <v-img :src="require('@/assets/shapes/cube-2.png')" contain class="cube-2"/>
+                            <v-img :src="require('@/assets/shapes/cube-2.png')" contain class="cube-3"/>
+                            <v-img :src="require('@/assets/shapes/cube-1.png')" contain class="cube-4"/>
+                            <v-img :src="require('@/assets/shapes/cube-1.png')" contain class="cube-5"/>
 
                             <v-responsive>
                                 <h1 class="display-3 ml-5 font-weight-medium text-uppercase">
@@ -259,6 +265,16 @@
                     </v-container>
                 </div>
                 <!-- Timeline section -->
+
+                <!-- Portfolio section -->
+                <div class="portfolio-section section-mt">
+                    <v-container>
+                        <h1 class="display-3 font-weight-medium text-uppercase">My Work</h1>
+                    </v-container>
+
+                    <portfolio-carousel/>
+                </div>
+                <!-- Portfolio section -->
 
             </v-content>
             <!-- Content -->
@@ -529,6 +545,44 @@
         .timeline-section {
             position: relative;
 
+            .timeline-layout {
+                position: relative;
+
+                .cube-1 {
+                    position: absolute;
+                    top: -40px;
+                    left: 50%;
+                    transform: translateX(-70%);
+                }
+
+                .cube-2 {
+                    position: absolute;
+                    top: 40%;
+                    left: 30%;
+                    transform: translateX(-70%);
+                }
+
+                .cube-3 {
+                    position: absolute;
+                    top: 75%;
+                    left: 5%;
+                }
+
+                .cube-4 {
+                    position: absolute;
+                    top: 37%;
+                    left: 85%;
+                    transform: translateX(-70%);
+                }
+
+                .cube-5 {
+                    position: absolute;
+                    top: 65%;
+                    left: 75%;
+                    transform: translateX(-70%);
+                }
+            }
+
             .bg-image1 {
                 position: absolute;
                 top: 30%;
@@ -596,12 +650,14 @@
 import Cube from './components/Cube'
 import SvgBackground1 from './components/SvgBackground1'
 import ServicesCarousel from './components/ServicesCarousel'
+import PortfolioCarousel from './components/PortfolioCarousel'
 
 export default {
   components: {
     Cube,
     SvgBackground1,
-    ServicesCarousel
+    ServicesCarousel,
+    PortfolioCarousel
   },
   metaInfo: {
     title: 'Shivam Goswami',
