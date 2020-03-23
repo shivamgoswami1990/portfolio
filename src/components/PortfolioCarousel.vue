@@ -5,15 +5,19 @@
 
                 <div class="d-flex">
                     <v-card color="#1A1A1A" elevation="0" tile class="pa-12"
-                            :width="portfolioContainerWidth/2" height="500">
+                            :width="$vuetify.breakpoint.smAndUp ? portfolioContainerWidth/2 : portfolioContainerWidth - 24">
 
                         <v-layout fill-height wrap align-content-space-between justify-space-between column>
+                            <img :src="require('@/assets/' + portfolio.imagePath)" width="100%"
+                                 class="mb-5" v-if="$vuetify.breakpoint.xsOnly">
+
                             <div>
                                 <h2 class="display-1">{{portfolio.title}}</h2>
                                 <p class="text-primary text-uppercase subtitle-2">{{portfolio.subtitle}}</p>
                             </div>
 
-                            <p class="opacity-70 text-justify">{{portfolio.details}}</p>
+                            <p class="opacity-70 text-justify">{{portfolio.details}}
+                            </p>
 
                             <div>
                                 <div class="d-flex">
@@ -44,7 +48,7 @@
                     </v-card>
 
                     <v-card color="#303030" elevation="0" tile class="pa-12 overflow-hidden"
-                            :width="portfolioContainerWidth/2 - 24" height="500">
+                            :width="portfolioContainerWidth/2 - 24" v-if="$vuetify.breakpoint.smAndUp">
 
                         <div class="device device-macbook device-spacegray">
                             <div class="device-frame">
