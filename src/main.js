@@ -130,6 +130,26 @@ Vue.prototype.projectDescriptions = [
   }
 ]
 
+// Form validation rules
+Vue.prototype.validateFormRules = (value, opType, limit, msg) => {
+  if (value !== undefined && value !== null) {
+    // Check the operation type e.g. gt, gte, lt, lte or e
+    if (opType === 'gt') {
+      return value.length > limit || msg
+    } if (opType === 'gte') {
+      return value.length >= limit || msg
+    } if (opType === 'lt') {
+      return value.length < limit || msg
+    } if (opType === 'lte') {
+      return value.length <= limit || msg
+    } if (opType === 'e') {
+      return value.length === limit || msg
+    }
+  } else {
+    return msg
+  }
+}
+
 Vue.config.productionTip = false
 
 new Vue({

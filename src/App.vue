@@ -105,7 +105,8 @@
                                             <Cube :fill-svg="fillSvg" v-if="$vuetify.breakpoint.mdAndUp"/>
                                         </div>
                                         <ul class="landing-menu">
-                                            <li v-for="(item, index) in landingMenu" :key="index">
+                                            <li v-for="(item, index) in landingMenu"
+                                                :key="index" @click="$vuetify.goTo(item.linkTo, options)">
                                                 <div class="menu-name caption">{{item.name}}</div>
                                                 <div class="menu-extension"/>
                                                 <div class="menu-order caption">{{item.order}}</div>
@@ -276,8 +277,24 @@
                 </div>
                 <!-- Portfolio section -->
 
+                <!-- Contact form section -->
+                <div class="contact-form-section section-mt">
+                    <v-container>
+                        <h1 class="display-3 font-weight-medium text-uppercase">Lets Talk</h1>
+                    </v-container>
+
+                    <contact/>
+                </div>
+                <!-- Contact form section -->
+
             </v-content>
             <!-- Content -->
+
+            <v-footer color="secondary">
+                <v-container>
+                    <p class="text-center mb-0">2020 © Shiv, All rights reserved.</p>
+                </v-container>
+            </v-footer>
         </v-app>
     </div>
 </template>
@@ -651,13 +668,15 @@ import Cube from './components/Cube'
 import SvgBackground1 from './components/SvgBackground1'
 import ServicesCarousel from './components/ServicesCarousel'
 import PortfolioCarousel from './components/PortfolioCarousel'
+import Contact from './components/Contact'
 
 export default {
   components: {
     Cube,
     SvgBackground1,
     ServicesCarousel,
-    PortfolioCarousel
+    PortfolioCarousel,
+    Contact
   },
   metaInfo: {
     title: 'Shivam Goswami',
@@ -680,34 +699,37 @@ export default {
         {
           order: '01',
           name: 'About me',
-          linkTo: ''
+          linkTo: '.about-section'
         },
         {
           order: '02',
-          name: 'Experience',
-          linkTo: ''
+          name: 'Skills',
+          linkTo: '.skills-slide-group'
         },
         {
           order: '03',
-          name: 'Skills',
-          linkTo: ''
+          name: 'Experience',
+          linkTo: '.timeline-section'
         },
         {
           order: '04',
           name: 'Portfolio',
-          linkTo: ''
+          linkTo: '.portfolio-section'
         },
         {
           order: '05',
           name: 'Contact',
-          linkTo: ''
+          linkTo: '.contact-form-section'
         }
       ],
       skillSlide: null,
-      fillSvg: false
+      fillSvg: false,
+      options: {
+        duration: 300,
+        offset: 0,
+        easing: 'easeInOutCubic'
+      }
     }
-  },
-  methods: {
   }
 }
 </script>
