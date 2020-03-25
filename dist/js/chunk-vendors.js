@@ -1207,6 +1207,17 @@ eval("// IMPORTANT: Do NOT use ES2015 features in this file (except for modules)
 
 /***/ }),
 
+/***/ "./node_modules/vuetify-loader/lib/runtime/installDirectives.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/vuetify-loader/lib/runtime/installDirectives.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).\n// This module is a runtime utility for cleaner component module output and will\n// be included in the final webpack user bundle.\n\nmodule.exports = function installDirectives (component, directives) {\n  var options = typeof component.exports === 'function'\n    ? component.exports.extendOptions\n    : component.options\n\n  if (typeof component.exports === 'function') {\n    options.directives = component.exports.options.directives\n  }\n\n  options.directives = options.directives || {}\n\n  for (var i in directives) {\n    options.directives[i] = options.directives[i] || directives[i]\n  }\n}\n\n\n//# sourceURL=webpack:///./node_modules/vuetify-loader/lib/runtime/installDirectives.js?");
+
+/***/ }),
+
 /***/ "./node_modules/vuetify/lib/components/VAlert/VAlert.js":
 /*!**************************************************************!*\
   !*** ./node_modules/vuetify/lib/components/VAlert/VAlert.js ***!

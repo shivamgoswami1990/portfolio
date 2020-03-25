@@ -9,7 +9,7 @@
 
                         <v-layout fill-height wrap align-content-space-between justify-space-between column>
                             <img :src="require('@/assets/' + portfolio.imagePath)" width="100%"
-                                 class="mb-5" v-if="$vuetify.breakpoint.xsOnly">
+                                 class="mb-5" v-if="$vuetify.breakpoint.xsOnly" alt="Project img">
 
                             <div>
                                 <h2 class="display-1">{{portfolio.title}}</h2>
@@ -52,7 +52,8 @@
 
                         <div class="device device-macbook device-spacegray">
                             <div class="device-frame">
-                                <img class="device-content" :src="require('@/assets/' + portfolio.imagePath)">
+                                <img class="device-content" :src="require('@/assets/' + portfolio.imagePath)"
+                                     alt="Project img">
                             </div>
                             <div class="device-stripe"></div>
                             <div class="device-header"></div>

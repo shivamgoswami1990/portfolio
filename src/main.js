@@ -98,7 +98,7 @@ Vue.prototype.projectDescriptions = [
     'dates': 'Mar 2017 - present', 'team': '1 member', 'frameworks': 'Rails, VueJS, Material design, Stylus, CSS3, HTML5',
     'link': 'https://jkaromaticsandperfumers.online/',
     'linkText': 'jkaromaticsandperfumers.online'},
-  'year': '2019', 'imagePath': 'projects/jk.png'
+  'year': '2019', 'imagePath': 'projects/jk.webp'
   },
   { 'title': 'HitIQ', 'subtitle': 'Landing website', 'details': 'HitIQ is platform for measuring, preventing head' +
       ' injuries for AFL & Rugby players via use of a smart mouth-guard. During my time there I developed' +
@@ -107,7 +107,7 @@ Vue.prototype.projectDescriptions = [
     'dates': 'Nov 2017- Aug 2018', 'team': '12 members', 'frameworks': 'Flask, HTML, CSS, Jquery, VueJS, CouchDB',
     'link': 'https://hitiq.com',
     'linkText': 'hitiq.com'},
-  'year': '2018', 'imagePath': 'projects/hq.png'
+  'year': '2018', 'imagePath': 'projects/hq.webp'
   },
   { 'title': 'Makerslane', 'subtitle': 'E-commerce dashboard', 'details': 'Makerslane is an e-commerce platform for' +
       ' bespoke custom made connecting buyers and sellers around Australia. I was in charge of a complete' +
@@ -117,7 +117,7 @@ Vue.prototype.projectDescriptions = [
     'dates': 'Nov 2016- 2017', 'team': '5 members', 'frameworks': 'Rails, AngularJS, Bootstrap, SASS, Bash',
     'link': 'https://www.makerslane.com.au:2017/',
     'linkText': 'makerslane.com.au'},
-  'year': '2017', 'imagePath': 'projects/ml.png'
+  'year': '2017', 'imagePath': 'projects/ml.webp'
   },
   { 'title': 'Ecospectral redesign', 'subtitle': 'Admin dashboard', 'details': 'Ecospectral is a company optimises' +
       ' energy efficiency of a building through a wireless network of smart lights. A big part of this ' +
@@ -126,7 +126,7 @@ Vue.prototype.projectDescriptions = [
     'dates': 'Jan - Oct 2016', 'team': '6 members', 'frameworks': 'Django, Java, EmberJS, CSS, HTML',
     'link': 'https://drive.google.com/open?id=0B0qTd90G5-SXZTBMMkNmbUV1TEU',
     'linkText': 'Screenshots'},
-  'year': '2016', 'imagePath': 'projects/eco.png'
+  'year': '2016', 'imagePath': 'projects/eco.webp'
   }
 ]
 

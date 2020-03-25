@@ -24,7 +24,7 @@
                     <v-spacer></v-spacer>
 
                     <v-avatar color="secondary" class="hidden-sm-and-down">
-                        <v-img :src="require('./assets/personal.png')" position="25% 20%" min-width="120"/>
+                        <v-img :src="require('./assets/personal.webp')" position="25% 20%" min-width="120" alt="logo"/>
                     </v-avatar>
 
                     <v-btn text height="55" class="mx-2 font-weight-bold text-capitalize px-2">
@@ -290,7 +290,7 @@
             </v-content>
             <!-- Content -->
 
-            <v-footer color="secondary">
+            <v-footer v-intersect="onIntersect" color="secondary">
                 <v-container>
                     <p class="text-center mb-0">2020 © Shiv, All rights reserved.</p>
                 </v-container>
@@ -689,7 +689,6 @@ export default {
   mounted() {
     this.innerScreenHeight = this.$vuetify.breakpoint.height
     this.innerScreenWidth = this.$vuetify.breakpoint.width
-    console.log(this.$vuetify)
   },
   data() {
     return {
