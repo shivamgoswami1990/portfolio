@@ -27,13 +27,15 @@
                         <v-img :src="require('./assets/personal.webp')" position="25% 20%" min-width="120" alt="logo"/>
                     </v-avatar>
 
-                    <v-btn text height="55" class="mx-2 font-weight-bold text-capitalize px-2">
+                    <v-btn text height="55" class="mx-2 font-weight-bold text-capitalize px-2" target="_blank"
+                           href="https://www.linkedin.com/in/shivam-goswami-74958170/" rel="noreferrer">
                         <v-img :src="require('./assets/social/linkedin-white.png')"
                                class="mr-1 mb-2" max-width="22"/>
                         Linkedin
                     </v-btn>
 
-                    <v-btn text height="55" class="mx-2 font-weight-bold text-capitalize px-2">
+                    <v-btn text height="55" class="mx-2 font-weight-bold text-capitalize px-2" target="_blank"
+                           href="https://github.com/shivamgoswami1990" rel="noreferrer">
                         <v-img :src="require('./assets/social/github-white.png')"
                                class="mr-1 mb-2" max-width="22"/>
                         Github
@@ -146,11 +148,11 @@
                                                 color="#1A1A1A" elevation="0" tile class="pa-12">
                                             <v-layout justify-space-between wrap>
                                                 <v-responsive>
-                                                    <h1 class="display-2 font-weight-medium">10</h1>
+                                                    <h1 class="display-2 font-weight-medium">5</h1>
                                                     <p class="text-primary text-uppercase subtitle-2">Years of experience</p>
                                                 </v-responsive>
                                                 <v-responsive>
-                                                    <h1 class="display-2 font-weight-medium">26</h1>
+                                                    <h1 class="display-2 font-weight-medium">29</h1>
                                                     <p class="text-primary text-uppercase subtitle-2">Years old</p>
                                                 </v-responsive>
                                             </v-layout>
@@ -290,7 +292,7 @@
             </v-content>
             <!-- Content -->
 
-            <v-footer v-intersect="onIntersect" color="secondary">
+            <v-footer color="secondary">
                 <v-container>
                     <p class="text-center mb-0">2020 © Shiv, All rights reserved.</p>
                 </v-container>
