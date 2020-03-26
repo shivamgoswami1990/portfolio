@@ -4,7 +4,7 @@
             <v-slide-item v-for="(portfolio, index) in projectDescriptions" :key="index">
 
                 <div class="d-flex">
-                    <v-card color="#1A1A1A" elevation="0" tile class="pa-12"
+                    <v-card color="#1A1A1A" elevation="0" tile :class="$vuetify.breakpoint.mdAndUp ? 'pa-12' : 'pa-8'"
                             :width="$vuetify.breakpoint.smAndUp ? portfolioContainerWidth/2 : portfolioContainerWidth - 24">
 
                         <v-layout fill-height wrap align-content-space-between justify-space-between column>

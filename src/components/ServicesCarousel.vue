@@ -2,10 +2,14 @@
     <v-card tile flat elevation="0" color="transparent">
 
         <v-slide-group multiple show-arrows class="skills-slide-group">
-            <v-slide-item v-for="(skill, index) in skillsInfo" :key="index" class="ma-4">
+            <v-slide-item v-for="(skill, index) in skillsInfo" :key="index"
+                          :class="$vuetify.breakpoint.mdAndUp ? 'ma-4' : 'ma-2'">
 
                 <v-hover v-slot:default="{ hover }">
-                    <v-card tile flat elevation="0" color="#1A1A1A" class="pa-12" width="350" height="330">
+                    <v-card tile flat elevation="0" color="#1A1A1A"
+                            :width="$vuetify.breakpoint.xsOnly ? $vuetify.breakpoint.width - 40 : 350"
+                            height="330"
+                            :class="$vuetify.breakpoint.mdAndUp ? 'pa-12' : 'pa-8'">
 
                         <v-scale-transition v-if="hover" hide-on-leave>
                             <v-layout wrap fill-height align-center justify-center>
@@ -27,7 +31,9 @@
                                :src="require('@/assets/' + skill.imagePath)"/>
                         <h2 v-if="!hover" class="headline">{{skill.heading}}</h2>
                         <v-card-text class="pa-0" v-if="!hover">
-                            <p class="mt-6 text-justify">{{skill.content}}</p>
+                            <p class="mt-6 text-justify" style="max-width: 300px">
+                                {{skill.content}}
+                            </p>
                         </v-card-text>
                     </v-card>
                 </v-hover>

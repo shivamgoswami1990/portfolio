@@ -5,9 +5,10 @@
             <v-app-bar app elevation="0" class="pt-1" height="65" style="z-index: 50">
                 <v-container class="d-flex">
 
-                    <v-app-bar-nav-icon class="ml-4">
+                    <v-app-bar-nav-icon class="ml-4" @click="showDrawer = true">
                         <slot>
-                            <v-icon color="primary" class="app-nar-nav-icon-position" size="27">
+                            <v-icon color="primary" class="app-nar-nav-icon-position" size="27"
+                            v-if="$vuetify.breakpoint.xsOnly">
                                 mdi-menu-open
                             </v-icon>
                             <v-avatar class="avatar-border title">SG</v-avatar>
@@ -43,6 +44,8 @@
                 </v-container>
             </v-app-bar>
             <!-- Top application bar -->
+
+            <nav-drawer :items="landingMenu" v-if="showDrawer" @showDrawer="transitionend" />
 
             <!-- Content -->
             <v-content class="pt-0 content">
@@ -147,7 +150,7 @@
 
                                 <v-row class="pa-5" no-gutters>
                                     <v-col cols="12" md="6" sm="6">
-                                        <v-card :height="$vuetify.breakpoint.lgAndUp ? 350 : 400"
+                                        <v-card :height="$vuetify.breakpoint.lgAndUp ? 350 : ''"
                                                 color="#1A1A1A" elevation="0" tile class="pa-12">
                                             <v-layout justify-space-between wrap>
                                                 <v-responsive>
@@ -173,7 +176,7 @@
                                         </v-card>
                                     </v-col>
                                     <v-col cols="12" md="6" sm="6">
-                                        <v-card :height="$vuetify.breakpoint.lgAndUp ? 350 : 400"
+                                        <v-card :height="$vuetify.breakpoint.lgAndUp ? 350 : ''"
                                                 color="#303030" elevation="0" tile class="location-card"
                                                :class="$vuetify.breakpoint.mdAndUp ? 'pa-12' : 'pa-6'">
                                             <v-img :src="require('@/assets/shapes/cube-1.png')" contain class="cube-1"/>
@@ -674,6 +677,7 @@ import SvgBackground1 from './components/SvgBackground1'
 import ServicesCarousel from './components/ServicesCarousel'
 import PortfolioCarousel from './components/PortfolioCarousel'
 import Contact from './components/Contact'
+import NavDrawer from './components/NavDrawer'
 
 export default {
   components: {
@@ -681,7 +685,8 @@ export default {
     SvgBackground1,
     ServicesCarousel,
     PortfolioCarousel,
-    Contact
+    Contact,
+    NavDrawer
   },
   metaInfo: {
     title: 'Shivam Goswami',
@@ -697,6 +702,7 @@ export default {
   },
   data() {
     return {
+      showDrawer: false,
       innerScreenHeight: 0,
       innerScreenWidth: 0,
       landingMenu: [
@@ -733,6 +739,11 @@ export default {
         offset: 0,
         easing: 'easeInOutCubic'
       }
+    }
+  },
+  methods: {
+    transitionend() {
+      this.showDrawer = false
     }
   }
 }
