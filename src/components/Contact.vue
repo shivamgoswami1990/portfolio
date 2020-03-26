@@ -58,7 +58,7 @@
                                  outlined light icon="mdi-cancel" v-if="showErrorMessage">
                             Something went wrong. Please try again
                         </v-alert>
-                        <v-btn color="primary" outlined tile width="160" type="submit" :disabled="!valid"
+                        <v-btn color="primary" outlined tile width="250" height="50" type="submit" :disabled="!valid"
                                class="mt-5 mx-2">
                             Send
                         </v-btn>

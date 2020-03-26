@@ -95,7 +95,7 @@ Vue.prototype.projectDescriptions = [
       ' consists of features such as user management, live notifications, inventory support,' +
       ' bespoke order/invoicing process, analytics etc. This was designed, developed and completely' +
       ' deployed by myself.', 'info': {
-    'dates': 'Mar 2017 - present', 'team': '1 member', 'frameworks': 'Rails, VueJS, Material design, Stylus, CSS3, HTML5',
+    'dates': 'Mar 2017 - present', 'team': '3 members', 'frameworks': 'Rails, VueJS, Material design, Stylus, CSS3, HTML5',
     'link': 'https://jkaromaticsandperfumers.online/',
     'linkText': 'jkaromaticsandperfumers.online'},
   'year': '2019', 'imagePath': 'projects/jk.webp'

@@ -17,7 +17,7 @@
                     <div class="hidden-sm-and-down">
                         <div class="d-flex flex-column pl-5">
                             <strong class="title d-block">Shivam Goswami</strong>
-                            <span class="d-block overline text-center">Full Stack Developer</span>
+                            <span class="d-block overline text-center">Front-end Developer</span>
                         </div>
                     </div>
 
@@ -99,7 +99,10 @@
                                         </h1>
                                         <h3 v-html="'< h1 />'" class="mt-5 text-accent opacity font-italic"/>
 
-                                        <a class="text-primary font-weight-bold pt-5">View projects</a>
+                                        <a class="text-primary font-weight-bold pt-5"
+                                           @click="$vuetify.goTo('.portfolio-section', options)">
+                                            View projects
+                                        </a>
                                     </v-responsive>
 
                                     <v-responsive class="menu-container" v-if="$vuetify.breakpoint.smAndUp">
@@ -196,8 +199,8 @@
                             </v-responsive>
 
                             <v-responsive class="section-mt">
-                                <h1 class="display-3 ml-5 font-weight-medium text-uppercase">
-                                    Services
+                                <h1 class="display-3 ml-5 font-weight-medium text-uppercase skills-heading">
+                                    Skills
                                 </h1>
 
                                 <services-carousel/>
@@ -223,7 +226,7 @@
 
                             <v-responsive>
                                 <h1 class="display-3 ml-5 font-weight-medium text-uppercase">
-                                    Where I've Been
+                                    Experience
                                 </h1>
 
                                 <v-layout wrap fill-height justify-center align-center>
@@ -272,7 +275,7 @@
                 <!-- Portfolio section -->
                 <div class="portfolio-section section-mt">
                     <v-container>
-                        <h1 class="display-3 font-weight-medium text-uppercase">My Work</h1>
+                        <h1 class="display-3 font-weight-medium text-uppercase">Projects</h1>
                     </v-container>
 
                     <portfolio-carousel/>
@@ -294,7 +297,7 @@
 
             <v-footer color="secondary">
                 <v-container>
-                    <p class="text-center mb-0">2020 © Shiv, All rights reserved.</p>
+                    <p class="text-center mb-0">2020 © Shivam Goswami, All rights reserved.</p>
                 </v-container>
             </v-footer>
         </v-app>
@@ -705,7 +708,7 @@ export default {
         {
           order: '02',
           name: 'Skills',
-          linkTo: '.skills-slide-group'
+          linkTo: '.skills-heading'
         },
         {
           order: '03',
@@ -714,7 +717,7 @@ export default {
         },
         {
           order: '04',
-          name: 'Portfolio',
+          name: 'Projects',
           linkTo: '.portfolio-section'
         },
         {
