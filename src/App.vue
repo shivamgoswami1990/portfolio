@@ -690,7 +690,7 @@ export default {
   },
   metaInfo: {
     title: 'Shivam Goswami',
-    titleTemplate: 'Frontend Developer Canberra → VueJS → AngularJS → Ruby on Rails → Python → %s',
+    titleTemplate: 'Frontend Developer Canberra Australia → VueJS → AngularJS → Ruby on Rails → Python → %s',
     meta: [
       {name: 'name', content: 'Freelance frontend development in Canberra, Australia'},
       {name: 'description', content: 'Specializing in languages such as VueJS, AngularJS, EmberJS, Ruby, Python'}
@@ -708,7 +708,7 @@ export default {
       landingMenu: [
         {
           order: '01',
-          name: 'About me',
+          name: 'About',
           linkTo: '.about-section'
         },
         {

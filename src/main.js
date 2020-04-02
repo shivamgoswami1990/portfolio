@@ -90,6 +90,31 @@ Vue.prototype.skillTags = [
 ]
 
 Vue.prototype.projectDescriptions = [
+  { 'title': 'ActewAGL', 'subtitle': 'Electricity & gas retailer in Canberra', 'details': 'ActewAGL is a local' +
+      ' electricity and gas retailer for ACT, NSW. This system helps people across ACT to sign up for electricity' +
+      ' and gas services offered according to their preferences anywhere, anytime from any device. It is a system aimed' +
+      ' at helping the internal staff, content managers, designers alike via seamless integration using Sitecore.', 'info': {
+    'dates': 'Sep 2019 - Present', 'team': '20 members', 'frameworks': 'VueJS, Sitecore, Webpack, SASS, CSS3, HTML5, Azure',
+    'link': 'https://actewagl.com.au/',
+    'linkText': 'actewagl.com.au'},
+  'year': '2020', 'imagePath': 'projects/actewagl.webp'
+  },
+  { 'title': 'Wadduwa Beach Villas', 'subtitle': 'Luxury villas in Colombo', 'details': 'Wadduwa Beach Villas is a local' +
+      ' icon offering premium dining and accomodation experience for the last few years near Colombo, Sri Lanka. ' +
+      'This redesigned, mobile first experience helps attract customers locally, internationally.', 'info': {
+    'dates': 'Nov 2019 - Present', 'team': '3 members', 'frameworks': 'VueJS, Material design, SASS, CSS3, HTML5',
+    'link': 'https://www.wadduwabeachvilla.com/',
+    'linkText': 'wadduwabeachvilla.com'},
+  'year': '2019', 'imagePath': 'projects/wadduwa.webp'
+  },
+  { 'title': 'ID Match', 'subtitle': 'Identity services in Australia', 'details': 'Identity Matching Services that help verify ' +
+      'and protect customer identity for business and government users in Australia. The portal aims at providing' +
+      ' services that verify identity information with the document issuer, while protecting privacy', 'info': {
+    'dates': 'Jan 2019 - Mar 2019', 'team': '4 members', 'frameworks': 'VueJS, Bootstrap, SASS, CSS3, HTML5',
+    'link': 'https://beta.idmatch.gov.au/',
+    'linkText': 'idmatch.gov.au'},
+  'year': '2019', 'imagePath': 'projects/idmatch.webp'
+  },
   { 'title': 'JK Aromatics', 'subtitle': 'Inventory management', 'details': 'JK Aromatics and perfumers is a ' +
       'chemicals/perfumes manufacturing business with an aim to optimise order lifecycle. The dashboard' +
       ' consists of features such as user management, live notifications, inventory support,' +

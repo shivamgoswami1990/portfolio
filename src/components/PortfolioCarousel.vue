@@ -42,7 +42,7 @@
 
                             <v-btn color="primary" outlined width="250" height="50" rel="noreferrer"
                                    class="mt-5" target="_blank" :href="portfolio.info.link">
-                                Screenshots
+                                View
                             </v-btn>
                         </v-layout>
                     </v-card>
