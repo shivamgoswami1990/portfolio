@@ -50,11 +50,11 @@
                         <v-textarea color="primary" v-model="message" label="Message" clearable auto-grow
                                     :rules="[rules.required]" class="mx-2"/>
 
-                        <v-alert type="primary" class="black--text" border="top"
+                        <v-alert color="primary" class="black--text" border="top"
                                  outlined light icon="mdi-check-circle" v-if="showSuccessMessage">
                             Your query has been submitted. We will be in touch
                         </v-alert>
-                        <v-alert type="error" class="black--text" border="top"
+                        <v-alert color="error" class="black--text" border="top"
                                  outlined light icon="mdi-cancel" v-if="showErrorMessage">
                             Something went wrong. Please try again
                         </v-alert>
@@ -115,14 +115,14 @@ export default {
           },
           body: JSON.stringify(data),
         })
-          .then((response) => response.json())
           .then((data) => {
+            console.log(data)
             // On success, clear form & display success message
-            if ('response_code' in data) {
-              if (data.response_code === '202') {
-                vm.name = ''
-                vm.email = ''
-                vm.message = ''
+            if ('status' in data) {
+              if (data.status === 200) {
+                vm.name = ' '
+                vm.email = ' '
+                vm.message = ' '
                 vm.isLoading = false
 
                 // Show the message on a timeout
